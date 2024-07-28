@@ -4,9 +4,9 @@ import { LucideClock, LucideFolderOpen, LucideTag } from "lucide-react";
 import BlogItemComponent from "./BlogItemPhotoDescription";
 
 const items = [
-  { item: "Brother InkJet", link: "/item1" },
-  { item: "Brother LaserJet", link: "/item2" },
-  { item: "Epson InkJet", link: "/item3" },
+  { item: "Brother InkJet", link: "/printers/#brother-inkjet" },
+  { item: "Brother LaserJet", link: "/printers/#brother-laserjet" },
+  { item: "Epson InkJet", link: "/printers/#epson-inkjet" },
 ];
 const pages = [
   { item: "Home", link: "/" },

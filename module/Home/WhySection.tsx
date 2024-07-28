@@ -9,7 +9,7 @@ interface ImageAnimationProps {
 
 const WhySection = ({ animationVariant }: ImageAnimationProps) => {
   return (
-    <div id="whyRentPrinter" className="bg-light-700">
+    <div className="bg-light-700">
       <WidthWrapper width="medium">
         <div className="max-w-[1216px] mx-4 2xl:mx-auto">
           <HomeImageText

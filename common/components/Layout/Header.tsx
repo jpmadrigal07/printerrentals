@@ -20,15 +20,15 @@ const links = [
     subMenu: [
       {
         name: "Brother InkJet",
-        link: "/printer",
+        link: "/printers/#brother-inkjet",
       },
       {
         name: "Brother LaserJet",
-        link: "/printer",
+        link: "/printers/#brother-laserjet",
       },
       {
-        name: "Epsone InkJet",
-        link: "/printer",
+        name: "Epson InkJet",
+        link: "/printers/#epson-inkjet",
       },
     ],
   },

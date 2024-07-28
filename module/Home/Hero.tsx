@@ -59,7 +59,7 @@ const Hero = () => {
             <Typography className="text-lg text-white font-semibold md:mt-24 mt-4">
               LEARN MORE
             </Typography>
-            <Link href={"#whyRentPrinter"} className="mx-auto">
+            <Link href="#learn-more" className="mx-auto mt-4">
               <LucideCircleChevronDown color="white" />
             </Link>
           </div>
