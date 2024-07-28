@@ -37,13 +37,13 @@ const Hero = () => {
 
           <Typography className="text-2xl text-white pt-12 mb-4 text-center">
             We are the one of the most reliable rental source of{" "}
-            <span>
+            <Link href="/printers">
               <strong>EPSON</strong>
-            </span>{" "}
-            and <strong>brother </strong>
+            </Link>{" "}
+            and <Link href="/printers"><strong>brother </strong></Link>
             printer
           </Typography>
-          <Link href="https://printerrentalsph.com/">
+          <Link href="/printers">
             <Button
               size="lg"
               className="group relative h-12 w-48 overflow-hidden rounded-lg bg-secondary-800 shadow md:mt-24"

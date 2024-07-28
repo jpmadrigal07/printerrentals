@@ -4,7 +4,7 @@ import TitleDescriptionLink from './TitleDescriptionLink'
 const itemLinks = [
     {
       item: "Home",
-      link: "/home",
+      link: "/",
     },
     {
       item: "Printers",

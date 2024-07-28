@@ -9,7 +9,7 @@ const items = [
   { item: "Epson InkJet", link: "/item3" },
 ];
 const pages = [
-  { item: "Home", link: "/home" },
+  { item: "Home", link: "/" },
   { item: "Printers", link: "/printers" },
   { item: "About", link: "/about" },
   { item: "Blog", link: "/blog" },

@@ -10,13 +10,13 @@ import {
   LucideX,
 } from "lucide-react";
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const links = [
-  { name: "HOME", link: "/home", isActive: true },
+  { name: "HOME", link: "/" },
   {
-    name: "PRINTER",
-    link: "/printer",
-    isActive: false,
+    name: "PRINTERS",
+    link: "/printers",
     subMenu: [
       {
         name: "Brother InkJet",
@@ -38,6 +38,7 @@ const links = [
 ];
 
 const Header = () => {
+  const pathName = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
 
@@ -53,11 +54,11 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-gray-50 flex justify-between items-center h-16 p-4">
-      <div className="pl-2 md:pl-8">
-        <Image src={main_logo} alt="logo" width={120} height={120} />
-      </div>
-      <div className="pr-5 md:hidden" onClick={handleMenuClick}>
+    <nav className="bg-gray-50 flex justify-between items-center px-4 md:px-10 py-1">
+      <Link href="/">
+        <Image src={main_logo} alt="logo" width={140} height={140} />
+      </Link>
+      <div className="md:hidden" onClick={handleMenuClick}>
         <div
           className={`transition-transform duration-500 ease-in-out transform ${
             isMenuOpen ? "rotate-90" : ""
@@ -71,12 +72,12 @@ const Header = () => {
           isMenuOpen ? "scale-y-100" : "scale-y-0"
         } md:scale-y-100 fixed md:relative top-16 inset-x-0 md:top-auto bg-gray-50 p-5 md:p-0 md:bg-transparent md:flex z-[999]`}
       >
-        <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 list-none pr-1 md:pr-8">
+        <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 list-none">
           {links.map((link) => (
             <li key={link.name} className="group">
               <Link href={link.link}>
                 <div
-                  className="flex justify-between mb-2 items-center hover:text-orange-400 transition-colors duration-200"
+                  className="flex justify-between items-center hover:text-orange-400 transition-colors duration-200"
                   onClick={(e) =>
                     link.subMenu && handleSubMenuClick(e, link.name)
                   }
@@ -86,7 +87,7 @@ const Header = () => {
                       variant="h5"
                       fontWeight="semibold"
                       className={`text-blue-950 hover:text-orange-400 transition-colors duration-200 ${
-                        link.isActive ? "text-orange-400" : ""
+                        pathName === link.link ? "text-orange-400" : ""
                       }`}
                     >
                       {link.name}

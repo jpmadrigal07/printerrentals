@@ -7,20 +7,19 @@ const Cta = () => {
   return (
     <>
     <div className="w-full bg-primary-800">
-      <div className="md:grid md:grid-cols-2 md:gap-4 mt-20 md:place-items-center max-w-[1140px] mx-auto flex flex-col h-52 p-4 ">
+      <div className="md:grid md:grid-cols-2 md:gap-4 mt-20 md:place-items-center max-w-[1140px] mx-auto flex flex-col h-52 p-4">
         <div className="text-center mx-auto">
           <Typography
             fontWeight="semibold"
-            variant="h3"
-            className="text-white md:pb-0 md:pt-0 pt-4 pb-4 text-sm md:pl-8"
+            className="text-white md:pb-0 md:pt-0 pt-4 pb-4 md:pl-8 text-xl"
           >
             CALL US NOW! <br /> <br />
-            <span className="text-xl align-items-center"> (02) 7354 1271</span>
+            <span className="text-3xl align-items-center"> (02) 7354 1271</span>
           </Typography>
         </div>
 
         <div className="text-center md:mt-0 md:pr-8">
-          <Link href="https://printerrentalsph.com/">
+          <Link href="/contact">
             <Button
               size="lg"
               className="group relative h-12 w-48 overflow-hidden rounded-lg bg-secondary-800 shadow"

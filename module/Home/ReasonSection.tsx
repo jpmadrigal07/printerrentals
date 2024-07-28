@@ -3,6 +3,7 @@ import HomeImageText from "./HomeImageText";
 import { Typography } from "@/common/components/ui/Typography";
 import { WidthWrapper } from "@/common/components/WidthWrapper";
 import { LucideSquareCheck } from "lucide-react";
+import Link from "next/link";
 
 const checkItems = [
   {
@@ -46,8 +47,7 @@ const ReasonSection = ({ animationVariant }: ImageAnimationProps) => {
               A FEW REASONS WHY YOU MIGHT WANT TO DO BUSINESS WITH US
             </Typography>
             {checkItems.map((items) => (
-              <>
-                <div>
+                <div key={items.label}>
                   <ul>
                     <li>
                       <div className="flex items-center gap-2 pb-2">
@@ -57,7 +57,6 @@ const ReasonSection = ({ animationVariant }: ImageAnimationProps) => {
                     </li>
                   </ul>
                 </div>
-              </>
             ))}
 
             <Typography
@@ -72,9 +71,9 @@ const ReasonSection = ({ animationVariant }: ImageAnimationProps) => {
               major reasons why companies rent printers. So, we choose to have a
               business that offers a very good services for renting a printer
               that’s why a lot of our clients are happy with our service.{" "}
-              <span className="font-semibold underline underline-offset-2 hover:cursor-pointer">
+              <Link href="/2019/02/17/cost-rent-printer" target="_blank" className="font-semibold underline underline-offset-2 hover:cursor-pointer">
                 Read More
-              </span>
+              </Link>
             </p>
           </HomeImageText>
         </div>

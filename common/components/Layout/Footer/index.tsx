@@ -14,11 +14,11 @@ const Footer = ({
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className=" w-full pb-6 pt-20 2xl:pt-10 bottom-0 border-t border-gray-200">
+    <footer className="w-full pb-24 pt-20 2xl:pt-10 bottom-0 border-t border-gray-200">
       <WidthWrapper width={contentWidth}>
         <div className="md:flex pb-4">
           <div className="md:flex-1 pb-4 md:text-center md:pb-0 md:mr-4 border-b md:border-b-0">
-            <Typography variant="h2">
+            <Typography className="text-4xl mt-16 mb-36">
               WHAT ARE YOU WAITING FOR? <br />
               BE ONE OF OUR SATISFIED CLIENTS.
             </Typography>
@@ -28,11 +28,11 @@ const Footer = ({
               <Tabs tabs={OPTIONS} className="text-primary-800" />
             </div>
 
-            <div className="text-xs mt-8">
+            <div className="text-xs mt-20">
               &copy; {currentYear} {APP_NAME} | Made by{" "}
-              <span className="text-primary-800 font-semibold">
+              <Link href="https://www.zkript.dev" className="text-primary-800 font-semibold hover:underline" target="_blank">
                 Zkript Solutions
-              </span>
+              </Link>
             </div>
           </div>
         </div>

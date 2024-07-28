@@ -1,24 +1,22 @@
-import { APP_NAME } from "@/common/constants";
-
 export const OPTIONS = [
   {
     link: "/",
     name: "HOME",
   },
   {
-    link: "/",
+    link: "/printers",
     name: "PRINTERS",
   },
   {
-    link: "/",
+    link: "/about",
     name: "ABOUT",
   },
   {
-    link: "/",
+    link: "/blog",
     name: "BLOG",
   },
   {
-    link: "/",
+    link: "/contact",
     name: "CONTACT",
   },
 ];
