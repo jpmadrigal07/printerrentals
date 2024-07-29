@@ -12,11 +12,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <link rel="icon" type="image/x-icon" href={FAV_ICON} />
       <body className={inter.className}>
         <Header />
-        {children}
+        <div className="mt-[76px]">{children}</div>
         <Footer />
       </body>
     </html>

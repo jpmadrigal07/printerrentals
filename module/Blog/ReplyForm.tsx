@@ -1,7 +1,11 @@
 import { Button } from "@/common/components/ui/Button";
 import { Typography } from "@/common/components/ui/Typography";
+import { sendEmail } from "@/common/helpers/sendEmail";
 import { Link, Mail, Pencil, UserRound } from "lucide-react";
+import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 type T_Reply = {
   comment: string;
@@ -11,9 +15,44 @@ type T_Reply = {
 };
 
 const ReplyForm = () => {
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [captcha, setCaptcha] = useState<string | null>("");
+
   const { register, handleSubmit } = useForm<T_Reply>();
 
-  const onSubmit = (data: T_Reply) => console.log(data);
+  const onSubmit = (data: T_Reply) => {
+    if (captcha) {
+      initiateEmailSend();
+    } else {
+      toast.error("Please complete the reCAPTCHA before proceeding.");
+    }
+  };
+
+  const initiateEmailSend = () => {
+    fetch("/api/verify-captcha", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token: captcha }), // token will come from react-google-recaptcha implementation
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((errorData) => {
+            throw new Error(errorData.error);
+          });
+        }
+        return response.json();
+      })
+      .then(() => {
+        // When the captcha is verified, send the email
+        sendEmail({});
+        toast.success("Email sent successfully!");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
   return (
     <div>
@@ -78,6 +117,11 @@ const ReplyForm = () => {
           <div className="absolute inset-0 bg-secondary-900 transition-all duration-[250ms] ease-out opacity-0 group-hover:opacity-100"></div>
           <span className="relative text-white text-md">Post Comment</span>
         </Button>
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey={process.env.RECAPTCHA_PUBLIC || ""}
+          onChange={setCaptcha}
+        />
       </form>
     </div>
   );

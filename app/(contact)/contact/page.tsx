@@ -4,6 +4,7 @@ import { APP_NAME } from "@/common/constants";
 import Contact from "@/module/Contact";
 import Banner from "@/module/Contact/Banner";
 import { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: `Contact - ${APP_NAME} - Printer Rental, Printer Repair and Ink and Toner Refill`,
@@ -30,6 +31,7 @@ const ContactPage = () => {
         <Contact />
       </WidthWrapper>
       <Cta />
+      <Toaster position="top-center" />
     </>
   );
 };

@@ -22,13 +22,13 @@ export const metadata: Metadata = {
 
 const PrintersPage = () => {
   return (
-    <>
+    <div>
       <Banner />
       <WidthWrapper width="medium">
         <Printers />
       </WidthWrapper>
       <Cta />
-    </>
+    </div>
   );
 };
 

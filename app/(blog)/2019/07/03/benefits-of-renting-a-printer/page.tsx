@@ -3,6 +3,7 @@ import { APP_NAME } from "@/common/constants";
 import BlogContent from "@/module/Blog/Two";
 import Header from "@/module/Blog/Two/Header";
 import { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: `What are the Benefits of Renting a Printer? | ${APP_NAME}`,
@@ -45,6 +46,7 @@ const BlogContentPage = () => {
       <WidthWrapper width="medium">
         <BlogContent />
       </WidthWrapper>
+      <Toaster position="top-center" />
     </div>
   );
 };

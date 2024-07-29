@@ -3,6 +3,7 @@ import { APP_NAME } from "@/common/constants";
 import PrinterContent from "@/module/Printers/Content";
 import { printers } from "@/module/Printers/printersData";
 import { Metadata, ResolvingMetadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 type Prop = {
   params: { printer: string };
@@ -40,9 +41,12 @@ export async function generateMetadata(
 
 const PrintersPage = () => {
   return (
-    <WidthWrapper width="medium" className="px-0 md:px-4">
-      <PrinterContent />
-    </WidthWrapper>
+    <>
+      <WidthWrapper width="medium" className="px-0 md:px-4">
+        <PrinterContent />
+      </WidthWrapper>
+      <Toaster position="top-center" />
+    </>
   );
 };
 

@@ -1,8 +1,12 @@
 import { Button } from "@/common/components/ui/Button";
 import { Typography } from "@/common/components/ui/Typography";
+import { sendEmail } from "@/common/helpers/sendEmail";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { XIcon } from "lucide-react";
+import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 type T_Props = {
   isOpen: boolean;
@@ -17,9 +21,44 @@ type T_Enquiry = {
 };
 
 const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [captcha, setCaptcha] = useState<string | null>("");
+
   const { register, handleSubmit } = useForm<T_Enquiry>();
 
-  const onSubmit = (data: T_Enquiry) => console.log(data);
+  const onSubmit = (data: T_Enquiry) => {
+    if (captcha) {
+      initiateEmailSend();
+    } else {
+      toast.error("Please complete the reCAPTCHA before proceeding.");
+    }
+  };
+
+  const initiateEmailSend = () => {
+    fetch("/api/verify-captcha", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token: captcha }), // token will come from react-google-recaptcha implementation
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((errorData) => {
+            throw new Error(errorData.error);
+          });
+        }
+        return response.json();
+      })
+      .then(() => {
+        // When the captcha is verified, send the email
+        sendEmail({});
+        toast.success("Email sent successfully!");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
   return (
     <Dialog open={isOpen} onClose={setClose} className="relative z-10">
@@ -93,7 +132,7 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
                       />
                     </div>
                   </div>
-                  <div className="flex justify-center items-center mt-5 space-x-5">
+                  <div className="flex justify-center items-center my-5 space-x-5">
                     <Button
                       type="submit"
                       className="text-[15px] py-2 px-6 bg-secondary-800 hover:bg-secondary-900 text-white font-bold"
@@ -107,6 +146,13 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
                     >
                       Cancel
                     </Button>
+                  </div>
+                  <div className="flex justify-center">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={process.env.RECAPTCHA_PUBLIC || ""}
+                      onChange={setCaptcha}
+                    />
                   </div>
                 </form>
               </div>

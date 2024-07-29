@@ -3,6 +3,7 @@ import { APP_NAME } from "@/common/constants";
 import BlogContent from "@/module/Blog/Three";
 import Header from "@/module/Blog/Three/Header";
 import { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: `How much does it cost to rent a printer? | ${APP_NAME}`,
@@ -45,6 +46,7 @@ const BlogContentPage = () => {
       <WidthWrapper width="medium">
         <BlogContent />
       </WidthWrapper>
+      <Toaster position="top-center" />
     </div>
   );
 };
