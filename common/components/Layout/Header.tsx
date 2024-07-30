@@ -54,7 +54,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-gray-50 flex justify-between items-center px-4 md:px-10 py-1">
+    <nav className="bg-gray-50 flex justify-between items-center px-4 md:px-10 py-1 w-full fixed top-0 z-[999]">
       <Link href="/">
         <Image src={main_logo} alt="logo" width={140} height={140} />
       </Link>
@@ -70,7 +70,7 @@ const Header = () => {
       <div
         className={`transition-all duration-200 ease-in-out transform origin-top ${
           isMenuOpen ? "scale-y-100" : "scale-y-0"
-        } md:scale-y-100 fixed md:relative top-16 inset-x-0 md:top-auto bg-gray-50 p-5 md:p-0 md:bg-transparent md:flex z-[999]`}
+        } md:scale-y-100 fixed md:relative top-16 inset-x-0 md:top-auto bg-gray-50 p-5 md:p-0 md:bg-transparent md:flex`}
       >
         <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 list-none">
           {links.map((link) => (
@@ -104,9 +104,11 @@ const Header = () => {
                   )}
                 </div>
               </Link>
-              {link.subMenu && openSubMenu === link.name && (
+              {link.subMenu && (
                 <div
-                  className={`absolute bg-white shadow-lg right-36 mt-2 py-2 px-4 w-56 rounded-lg transition-all duration-300 ease-in-out transform origin-top scale-y-0 lg:group-hover:scale-y-100 pt-2 pb-2 hidden lg:block`}
+                  className={`md:absolute md:bg-white md:shadow-lg right-36 mt-2 py-2 px-4 md:w-56 md:rounded-lg transition-all duration-300 ease-in-out transform origin-top scale-y-0 md:group-hover:scale-y-100 pt-2 pb-2 md:block ${
+                    openSubMenu ? "w-full scale-y-100 bg-transparent" : "hidden"
+                  }`}
                 >
                   {link.subMenu.map((subLink, index) => (
                     <Link href={subLink.link} key={subLink.name}>

@@ -1,7 +1,7 @@
 "use client";
 import MainSection from "./MainSection";
 import RelatedPost from "./RelatedPost";
-import ReplyForm from "./ReplyForm";
+import ReplyForm from "../ReplyForm";
 
 const BlogContent = () => {
   return (

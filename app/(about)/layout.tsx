@@ -17,7 +17,7 @@ export default function RootLayout({
       <link rel="icon" type="image/x-icon" href={FAV_ICON} />
       <body className={inter.className}>
         <Header />
-        {children}
+        <div className="mt-[76px]">{children}</div>
         <Cta />
         <Footer />
       </body>
