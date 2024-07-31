@@ -22,13 +22,13 @@ const ReplyForm = () => {
 
   const onSubmit = (data: T_Reply) => {
     if (captcha) {
-      initiateEmailSend();
+      initiateEmailSend(data);
     } else {
       toast.error("Please complete the reCAPTCHA before proceeding.");
     }
   };
 
-  const initiateEmailSend = () => {
+  const initiateEmailSend = (data: T_Reply) => {
     fetch("/api/verify-captcha", {
       method: "POST",
       headers: {
@@ -46,7 +46,13 @@ const ReplyForm = () => {
       })
       .then(() => {
         // When the captcha is verified, send the email
-        sendEmail({});
+        sendEmail({
+          name: data.name,
+          email: data.email,
+          subject: "Reply from a blog",
+          comment: data.comment,
+          website: data.website,
+        });
         toast.success("Email sent successfully!");
       })
       .catch((error) => {
@@ -110,6 +116,11 @@ const ReplyForm = () => {
             className="block w-full rounded-md border-0 py-3 pl-[54px] pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-500 focus:border-none focus:outline-none sm:text-xl sm:leading-6"
           />
         </div>
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey={process.env.RECAPTCHA_PUBLIC || ""}
+          onChange={setCaptcha}
+        />
         <Button
           size="lg"
           className="group relative h-12 w-full md:w-48 overflow-hidden rounded-lg bg-secondary-800 shadow md:mt-24"
@@ -117,11 +128,6 @@ const ReplyForm = () => {
           <div className="absolute inset-0 bg-secondary-900 transition-all duration-[250ms] ease-out opacity-0 group-hover:opacity-100"></div>
           <span className="relative text-white text-md">Post Comment</span>
         </Button>
-        <ReCAPTCHA
-          ref={recaptchaRef}
-          sitekey={process.env.RECAPTCHA_PUBLIC || ""}
-          onChange={setCaptcha}
-        />
       </form>
     </div>
   );

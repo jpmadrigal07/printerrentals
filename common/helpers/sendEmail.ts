@@ -1,15 +1,38 @@
-import Template1 from '@/common/components/Email/Template1';
-import { Resend } from 'resend';
+import EmailTemplate from "@/common/components/Email/EmailTemplate";
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const sendEmail = async ({ email = "jp.madrigal07@gmail.com", subject = "Inquiry", firstName = "John" }: { email?: string, subject?: string, firstName?: string}) => {
+export const sendEmail = async ({
+  email = "",
+  subject = "",
+  name = "",
+  phoneNumber = "",
+  message = "",
+  comment = "",
+  website = "",
+}: {
+  email?: string;
+  subject?: string;
+  name?: string;
+  phoneNumber?: string;
+  message?: string;
+  comment?: string;
+  website?: string;
+}) => {
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Printer Rentals <sendemail@resend.dev>',
-      to: [email],
+      from: "Printer Rentals PH <sendemail@resend.dev>",
+      to: "jp.madrigal07@gmail.com",
       subject: subject,
-      react: Template1({ firstName }),
+      react: EmailTemplate({
+        name,
+        email,
+        phoneNumber,
+        message,
+        comment,
+        website,
+      }),
     });
 
     if (error) {
@@ -20,4 +43,4 @@ export const sendEmail = async ({ email = "jp.madrigal07@gmail.com", subject = "
   } catch (error) {
     return Response.json({ error }, { status: 500 });
   }
-}
+};
