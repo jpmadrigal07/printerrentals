@@ -24,7 +24,7 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [captcha, setCaptcha] = useState<string | null>("");
 
-  const { register, handleSubmit } = useForm<T_Enquiry>();
+  const { register, handleSubmit, reset } = useForm<T_Enquiry>();
 
   const onSubmit = (data: T_Enquiry) => {
     if (captcha) {
@@ -59,6 +59,7 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
           message: data.enquiry,
         });
         toast.success("Email sent successfully!");
+        reset()
       })
       .catch((error) => {
         toast.error(error.message);
@@ -125,7 +126,7 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
                         required
                       />
                       <input
-                        {...register("subject")}
+                        {...register("subject", { required: true })}
                         type="text"
                         className="block w-full rounded-md border-0 px-2 py-1.5 mt-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:border-none focus:outline-none focus:ring-yellow-500 sm:text-sm sm:leading-6"
                       />
@@ -136,6 +137,13 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
                         required
                       />
                     </div>
+                  </div>
+                  <div className="flex justify-center mt-4">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={process.env.RECAPTCHA_PUBLIC || ""}
+                      onChange={setCaptcha}
+                    />
                   </div>
                   <div className="flex justify-center items-center my-5 space-x-5">
                     <Button
@@ -151,13 +159,6 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
                     >
                       Cancel
                     </Button>
-                  </div>
-                  <div className="flex justify-center">
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey={process.env.RECAPTCHA_PUBLIC || ""}
-                      onChange={setCaptcha}
-                    />
                   </div>
                 </form>
               </div>
