@@ -22,13 +22,13 @@ const ReplyForm = () => {
 
   const onSubmit = (data: T_Reply) => {
     if (captcha) {
-      initiateEmailSend();
+      initiateEmailSend(data);
     } else {
       toast.error("Please complete the reCAPTCHA before proceeding.");
     }
   };
 
-  const initiateEmailSend = () => {
+  const initiateEmailSend = (data: T_Reply) => {
     fetch("/api/verify-captcha", {
       method: "POST",
       headers: {
@@ -46,7 +46,13 @@ const ReplyForm = () => {
       })
       .then(() => {
         // When the captcha is verified, send the email
-        sendEmail({});
+        sendEmail({
+          name: data.name,
+          email: data.email,
+          subject: "Reply from a blog",
+          comment: data.comment,
+          website: data.website,
+        });
         toast.success("Email sent successfully!");
       })
       .catch((error) => {

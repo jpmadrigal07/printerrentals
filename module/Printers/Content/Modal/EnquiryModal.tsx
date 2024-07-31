@@ -28,13 +28,13 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
 
   const onSubmit = (data: T_Enquiry) => {
     if (captcha) {
-      initiateEmailSend();
+      initiateEmailSend(data);
     } else {
       toast.error("Please complete the reCAPTCHA before proceeding.");
     }
   };
 
-  const initiateEmailSend = () => {
+  const initiateEmailSend = (data: T_Enquiry) => {
     fetch("/api/verify-captcha", {
       method: "POST",
       headers: {
@@ -52,7 +52,12 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
       })
       .then(() => {
         // When the captcha is verified, send the email
-        sendEmail({});
+        sendEmail({
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.enquiry,
+        });
         toast.success("Email sent successfully!");
       })
       .catch((error) => {

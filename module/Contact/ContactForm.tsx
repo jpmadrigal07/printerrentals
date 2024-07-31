@@ -22,13 +22,13 @@ const ContactForm = () => {
 
   const onSubmit = (data: T_Contact) => {
     if (captcha) {
-      initiateEmailSend();
+      initiateEmailSend(data);
     } else {
       toast.error("Please complete the reCAPTCHA before proceeding.");
     }
   };
 
-  const initiateEmailSend = () => {
+  const initiateEmailSend = (data: T_Contact) => {
     fetch("/api/verify-captcha", {
       method: "POST",
       headers: {
@@ -46,7 +46,12 @@ const ContactForm = () => {
       })
       .then(() => {
         // When the captcha is verified, send the email
-        sendEmail({});
+        sendEmail({
+          name: data.name,
+          email: data.email,
+          phoneNumber: data.phoneNumber,
+          message: data.message,
+        });
         toast.success("Email sent successfully!");
       })
       .catch((error) => {
