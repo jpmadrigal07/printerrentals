@@ -1,6 +1,5 @@
 import { Button } from "@/common/components/ui/Button";
 import { Typography } from "@/common/components/ui/Typography";
-import { sendEmail } from "@/common/helpers/sendEmail";
 import { Link, Mail, Pencil, UserRound } from "lucide-react";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -18,7 +17,7 @@ const ReplyForm = () => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [captcha, setCaptcha] = useState<string | null>("");
 
-  const { register, handleSubmit } = useForm<T_Reply>();
+  const { register, handleSubmit, reset } = useForm<T_Reply>();
 
   const onSubmit = (data: T_Reply) => {
     if (captcha) {
@@ -34,9 +33,16 @@ const ReplyForm = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token: captcha }), // token will come from react-google-recaptcha implementation
+      body: JSON.stringify({ 
+        token: captcha,
+        name: data.name,
+        email: data.email,
+        subject: "Reply from a blog",
+        comment: data.comment,
+        website: data.website,
+      }),
     })
-      .then((response) => {
+      .then(async (response) => {
         if (!response.ok) {
           return response.json().then((errorData) => {
             throw new Error(errorData.error);
@@ -45,15 +51,10 @@ const ReplyForm = () => {
         return response.json();
       })
       .then(() => {
-        // When the captcha is verified, send the email
-        sendEmail({
-          name: data.name,
-          email: data.email,
-          subject: "Reply from a blog",
-          comment: data.comment,
-          website: data.website,
-        });
-        toast.success("Email sent successfully!");
+        toast.success("Email sent successfully!", { duration: 5000 });
+        reset()
+        recaptchaRef.current?.reset();
+        setCaptcha("");
       })
       .catch((error) => {
         toast.error(error.message);

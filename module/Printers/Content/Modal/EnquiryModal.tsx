@@ -1,12 +1,12 @@
 import { Button } from "@/common/components/ui/Button";
 import { Typography } from "@/common/components/ui/Typography";
-import { sendEmail } from "@/common/helpers/sendEmail";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { XIcon } from "lucide-react";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { usePathname } from 'next/navigation';
 
 type T_Props = {
   isOpen: boolean;
@@ -21,8 +21,11 @@ type T_Enquiry = {
 };
 
 const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
+  const pathname = usePathname();
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [captcha, setCaptcha] = useState<string | null>("");
+
+  const printerId = pathname.split("/")[2] || "Unknown Printer";
 
   const { register, handleSubmit, reset } = useForm<T_Enquiry>();
 
@@ -40,9 +43,15 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token: captcha }), // token will come from react-google-recaptcha implementation
+      body: JSON.stringify({ 
+        token: captcha,
+        name: data.name,
+        email: data.email,
+        subject: `${printerId.toLocaleUpperCase()} Inquiry${data.subject ? ` - ${data.subject}` : ""}`,
+        message: data.enquiry,
+      }),
     })
-      .then((response) => {
+      .then(async (response) => {
         if (!response.ok) {
           return response.json().then((errorData) => {
             throw new Error(errorData.error);
@@ -51,15 +60,10 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
         return response.json();
       })
       .then(() => {
-        // When the captcha is verified, send the email
-        sendEmail({
-          name: data.name,
-          email: data.email,
-          subject: data.subject,
-          message: data.enquiry,
-        });
-        toast.success("Email sent successfully!");
+        toast.success("Email sent successfully!", { duration: 5000 });
         reset()
+        recaptchaRef.current?.reset();
+        setCaptcha("");
       })
       .catch((error) => {
         toast.error(error.message);
@@ -94,7 +98,7 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
                   variant="h5"
                   fontWeight="bold"
                 >
-                  DCP J100
+                  {printerId.toLocaleUpperCase()}
                 </Typography>
                 <form onSubmit={handleSubmit(onSubmit)} className="mt-5">
                   <div className="grid grid-cols-7 md:grid-cols-6 gap-x-2">
@@ -126,7 +130,7 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
                         required
                       />
                       <input
-                        {...register("subject", { required: true })}
+                        {...register("subject")}
                         type="text"
                         className="block w-full rounded-md border-0 px-2 py-1.5 mt-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:border-none focus:outline-none focus:ring-yellow-500 sm:text-sm sm:leading-6"
                       />
