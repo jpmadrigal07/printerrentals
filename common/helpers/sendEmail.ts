@@ -23,7 +23,7 @@ export const sendEmail = async ({
   try {
     const { data, error } = await resend.emails.send({
       from: "Printer Rentals PH <sendemail@resend.dev>",
-      to: "jp.madrigal07@gmail.com",
+      to: process.env.EMAIL_RECEIVER || "jp.madrigal07@gmail.com",
       subject: subject,
       react: EmailTemplate({
         name,
