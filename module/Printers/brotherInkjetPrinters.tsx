@@ -1,7 +1,5 @@
 import Description from "./Content/Description";
 import Title from "./Content/Title";
-import j100 from "@/common/assets/brother-j100.jpeg";
-import j105 from "@/common/assets/brother-j105-600x600.jpeg";
 import j200 from "@/common/assets/brother-j200-600x600.jpeg";
 import j2330 from "@/common/assets/brother-j2330-600x600.jpeg";
 import j2730 from "@/common/assets/brother-j2730-600x600.jpeg";
@@ -21,134 +19,6 @@ import { Typography } from "@/common/components/ui/Typography";
 import Link from "next/link";
 
 export const brotherInkjetPrinters = [
-  {
-    id: "dcp-j100",
-    model: "DCP J100",
-    image: j100,
-    pricePerMonth: "2,500.00 / Month",
-    description:
-      "The Brother DCP J100 stands up to the competition due to its affordable price and reliable features including a print resolution of 1200×2400 DPI, USB 2.0 Hi-Speed connectivity, and Inkjet printing technology. Read on to learn more about the Brother DCP J100.",
-    type: "Brother Inkjet",
-    descriptions: () => {
-      return (
-        <>
-          <Title
-            variant="h1"
-            text="Brother DCP J100: A fast and accurate multifunction printer"
-            className="mb-7"
-          />
-          <Description
-            text="Brother is one of the household names in the printing world that are trusted by Filipinos. They are popular for their line ofprinters, with the DCP J100 being one of the most sought-after models. The Brother DCP J100 delivers an impressive performance when it comes to printing, scanning, and copying, making it ideal for home and office use. Here is a rundown of its specs and features."
-            className="mb-12"
-          />
-          <Title variant="h1" text="Polycarbonate Body" className="mb-7" />
-          <Description
-            text="With a black polycarbonate body and matte finish, the Brother DCP J100 sports a sophisticated exterior. Much like high-end printers, the scanning bed is situated on top of the machine. Down the lid is a set of buttons for the operation of the machine. These include Enlarge/Reduce, Copy Quality, Number of Copies, Copy Options, Scan, Stop/Exit, Color, and much more. Each of these has specific functions which are found in the manual."
-            className="mb-12"
-          />
-          <Title
-            variant="h1"
-            text="Good scanning performance"
-            className="mb-7"
-          />
-          <Description
-            text="In the scanning department, the Brother DCP J100 will allow you to scan documents and save them in JPEG, PNG, or PDF format. You can also crop your scanned files manually or enable the software to do the cropping."
-            className="mb-12"
-          />
-          <Title variant="h1" text="Easy-to-use" className="mb-7" />
-          <Description
-            text="Photocopying is so convenient with the Brother DCP J100, you can easily make a quick copy of your ID by simply selecting the n-in-1 or ID copy functions which prompt you to scan each side, then the printer would automatically place the copies on a sheet of paper. You won’t need to place your ID manually on the scanner or place the paper again to print the other side."
-            className="mb-12"
-          />
-          <Title variant="h1" text="Impressive performance" className="mb-7" />
-          <Description text="Much like top-quality inkjet printers in the market, the Brother DCP J100 will be enough for day-to-day printing, regardless of the type of document. When it comes to printing speed, it delivers an impressive speed of 11ppm for monochrome and 6 ppm for color prints. This saves you time when you have a large volume of printing tasks. On top of that, the Brother DCP J100 has InkBenefit Cartridges with a super high yield, which conveniently reduce the frequency of ink purchases. These cartridges also let you replace only the colors you need, hence reducing the wastage of ink." />
-          <br />
-          <Description text="As for print quality, you can expect the Brother DCP J100 to produce high-quality and consistent results with sharp and crisp texts and visuals sporting a resolution of 1200×600 dpi. In addition, the printer has a Lamination technology that laminates the print head with a stainless steel, protecting the device from corrosion." />
-        </>
-      );
-    },
-    specifications: () => {
-      return (
-        <List
-          lists={[
-            "Print/Scan/Copy",
-            "Print up to Legal size, Scan/Copy up to A4 size",
-            "Prints up to 11/6 ppm based on ISO",
-            "Has 1 line LCD screen",
-            "Can print up to 100 sheet tray / uses high yield inks",
-          ]}
-        />
-      );
-    },
-    related: ["mfc-j3530dw", "mfc-j2330dw", "mfc-j2730dw"],
-  },
-  {
-    id: "dcp-j105w",
-    model: "DCP J105w",
-    image: j105,
-    pricePerMonth: "3,000.00 / Month",
-    description:
-      "Laminated Piezo Print Head provides reliability and optimises undisrupted high-volume printing. Save more, do more with low-cost super high yield InkBenefit cartridges and wireless networking capability.",
-    type: "Brother Inkjet",
-    descriptions: () => {
-      return (
-        <>
-          <Description
-            className="mb-12"
-            text="Brother’s Laminated Piezo Print Head minimises print head damage and enhances the durability of the machine, allowing users to save on repairs. Furthermore, with low-cost super high yield InkBenefit cartridges, the inkjet Multi-Function Centre meets the demands of high print-volume businesses for low running costs."
-          />
-          <Title className="mb-7" variant="h1" text="Save on Repairs" />
-          <Description
-            className="mb-12"
-            text="Lamination Technology & Piezo Technology enhanced durability and minimises print head damage, helping you save on repair and replacement costs."
-          />
-          <Title className="mb-7" variant="h1" text="Low Running Costs" />
-          <Description
-            className="mb-12"
-            text="Enjoy low ink costs with affordable 2,400^ super high page-yield InkBenefit cartridges. Reduce ink wastage with an individual ink cartridge system that allows you to replace only the colours you need. Plus, easily produce 2-up and 4-up on a single sheet. This saves paper when viewing drafts or layouts."
-          />
-          <Title className="mb-7" variant="h1" text="Improve Productivity" />
-          <Description
-            className="mb-12"
-            text="Featuring high print speeds of 11/6ppm* , time is saved when there are large volume printing tasks. Users can utilise their time more efficiently instead of waiting for their printouts. Furthermore, with paper input of up to 100 sheets, users avoid having to refill paper tray too frequently."
-          />
-          <Title className="mb-7" variant="h1" text="Save Time" />
-          <Description
-            className="mb-12"
-            text="Enjoy convenience of less-frequent ink purchases with super high-yield InkBenefit cartridges. Plus, save valuable time as you can still print in black even if colour cartridges run out."
-          />
-          <Title
-            className="mb-7"
-            variant="h1"
-            text="Simplify the Way You Work"
-          />
-          <Description text="With the free iPrint&Scan app, you can now print directly from your iPhone, iPod Touch or iPad. Plus, you can scan documents from your Multi-Function Centre straight to your Apple gadgets." />
-          <br />
-          <Description
-            className="mb-12"
-            text="In addition, save resources and share your multi-function centre across your wireless network."
-          />
-          <Title className="mb-7" variant="h1" text="Professional Quality" />
-          <Description text="Our colour inkjet series deliver consistent and high quality results with sharp images and crisp text. Our Multi-Function Centres offer unique colour enhancement designed to optimize your color prints with true to life colours. Brother black pigment ink will provide you with sharp text printing on standard paper. It is water resistant so it won’t smudge. You get consistently sharp text every time." />
-        </>
-      );
-    },
-    specifications: () => {
-      return (
-        <List
-          lists={[
-            "Print/Scan/Copy",
-            "Print up to Legal size, Scan/Copy up to A4 size",
-            "Prints up to 11/6 ppm based on ISO",
-            "Has 1 line LCD screen",
-            "Wireless network/ Mobile print capabilities",
-            "Can print up to 100 sheet tray / uses high yield inks",
-          ]}
-        />
-      );
-    },
-    related: ["mfc-j200", "mfc-j2330dw", "mfc-j3930dw"],
-  },
   {
     id: "mfc-j200",
     model: "MFC J200",
@@ -179,7 +49,7 @@ export const brotherInkjetPrinters = [
         />
       );
     },
-    related: ["dcp-j100", "dcp-j105w", "mfc-j2330dw"],
+    related: ["mfc-j2330dw"],
   },
   {
     id: "mfc-j2330dw",
@@ -277,7 +147,7 @@ export const brotherInkjetPrinters = [
         />
       );
     },
-    related: ["dcp-j100", "mfc-j2330dw", "mfc-j200"],
+    related: ["mfc-j2330dw", "mfc-j200"],
   },
   {
     id: "mfc-j3530dw",
@@ -352,7 +222,7 @@ export const brotherInkjetPrinters = [
         />
       );
     },
-    related: ["mfc-j3930dw", "mfc-j2730dw", "dcp-j100"],
+    related: ["mfc-j3930dw", "mfc-j2730dw"],
   },
   {
     id: "mfc-j3930dw",
@@ -399,7 +269,7 @@ export const brotherInkjetPrinters = [
         />
       );
     },
-    related: ["dcp-j105w", "mfc-j2330dw", "mfc-j2730dw"],
+    related: ["mfc-j2330dw", "mfc-j2730dw"],
   },
   {
     id: "dcp-t520w",
@@ -488,7 +358,7 @@ export const brotherInkjetPrinters = [
         />
       );
     },
-    related: ["dcp-j100", "dcp-j105w", "mfc-j2730dw"],
+    related: ["mfc-j2730dw"],
   },
   {
     id: "dcp-t720dw",
@@ -579,7 +449,7 @@ export const brotherInkjetPrinters = [
         />
       );
     },
-    related: ["dcp-j100", "mfc-j2330dw", "mfc-j200"],
+    related: ["mfc-j2330dw", "mfc-j200"],
   },
   {
     id: "dcp-t820dw",
@@ -671,7 +541,7 @@ export const brotherInkjetPrinters = [
         />
       );
     },
-    related: ["dcp-t720dw", "mfc-j200", "dcp-j105w"],
+    related: ["dcp-t720dw", "mfc-j200"],
   },
   {
     id: "mfc-t920dw",
@@ -763,7 +633,7 @@ export const brotherInkjetPrinters = [
         />
       );
     },
-    related: ["mfc-j3930dw", "dcp-t820dw", "dcp-j105w"],
+    related: ["mfc-j3930dw", "dcp-t820dw"],
   },
   {
     id: "hl-t4000dw",

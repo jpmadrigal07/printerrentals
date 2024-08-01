@@ -1,27 +1,8 @@
 import React from "react";
-import TitleDescriptionLink from "@/common/components/PrinterForRent";
 import { LucideClock, LucideFolderOpen, LucideTag } from "lucide-react";
-import BlogItemComponent from "./BlogItemPhotoDescription";
+import CategoryItem from "@/module/Category/CategoryItem";
 
-const items = [
-  { item: "Brother InkJet", link: "/printers#brother-inkjet" },
-  { item: "Brother LaserJet", link: "/printers#brother-laserjet" },
-  { item: "Epson InkJet", link: "/printers#epson-inkjet" },
-];
-const pages = [
-  { item: "Home", link: "/" },
-  { item: "Printers", link: "/printers" },
-  { item: "About", link: "/about" },
-  { item: "Blog", link: "/blog" },
-  { item: "Contact", link: "/contact" },
-];
-const socMed = [
-  { item: "Facebook", link: "https://www.facebook.com/printerrentalsph" },
-  { item: "Twitter", link: "https://twitter.com" },
-  { item: "Instagram", link: "https://instagram.com" },
-];
-
-const blogItems = [
+const categoryItems = [
   {
     imageKey: "/woman-question.jpeg",
     title:
@@ -107,37 +88,14 @@ const blogItems = [
   },
 ];
 
-const printerTitle = "Printer for Rent";
-const pagesTitle = "Pages";
-const socMedTitle = "Social Media";
-
-const index = () => {
+const Category = () => {
   return (
-    <div className="max-w-[1140px] mx-4 md:mx-10 2xl:mx-auto 2xl:-translate-x-[78px] mt-10 md:mt-14 lg:mt-20">
-      <div className="sm:flex w-full items-start gap-16">
-        <div className="w-full md:w-2/3 lg:w-[740px]">
-          {blogItems.map((index, key) => (
-            <BlogItemComponent blogItem={index} key={key} />
-          ))}
-        </div>
-        <div className="space-y-4">
-          <div>
-            <TitleDescriptionLink itemLinks={items} title={printerTitle} />
-          </div>
-          <div>
-            <TitleDescriptionLink itemLinks={pages} title={pagesTitle} />
-          </div>
-          <div>
-            <TitleDescriptionLink
-              itemLinks={socMed}
-              title={socMedTitle}
-              target="_blank"
-            />
-          </div>
-        </div>
-      </div>
+    <div className="2xl:max-w-[1140px] mx-2 md:mx-5 2xl:mx-auto mt-10 md:mt-14 lg:mt-20">
+      {categoryItems.map((index, key) => (
+        <CategoryItem categoryItem={index} key={key} />
+      ))}
     </div>
   );
 };
 
-export default index;
+export default Category;

@@ -10,9 +10,10 @@ interface itemLinks {
 interface ItemLinkProps {
   itemLinks: itemLinks[];
   title: string;
+  target?: string;
 }
 
-const TitleDescriptionLink = ({ itemLinks, title }: ItemLinkProps) => {
+const TitleDescriptionLink = ({ itemLinks, title, target }: ItemLinkProps) => {
   return (
     <div>
       <Typography variant="h1" fontWeight="bold">
@@ -22,7 +23,7 @@ const TitleDescriptionLink = ({ itemLinks, title }: ItemLinkProps) => {
       {itemLinks.map((items, index) => (
         <div key={index}>
           <ul className="text-primary-800">
-            <Link href={items.link}>
+            <Link href={items.link} target={target}>
               <li className="hover:text-secondary-800 transition-colors duration-200 hover:cursor-pointer">
                 <Typography variant="h2">{items.item}</Typography>
               </li>

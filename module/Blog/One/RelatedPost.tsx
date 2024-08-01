@@ -5,8 +5,7 @@ import { LucideClock, LucideFolderOpen, LucideTag } from "lucide-react";
 const blogItem2 = {
   imageKey: "/hand-okay.png",
   title: "What are the Benefits of Renting a Printer? | Printer Rentals PH",
-  titleLink: "/benefits-of-renting-a-printer",
-  buttonLink: "/benefits-of-renting-a-printer",
+  link: "/2019/07/03/benefits-of-renting-a-printer",
   description:
     "Printers are a necessity in both personal and business setting so it is important to know the benefits of renting a printer. Printers come in a wide variety of choices. Some printers are for personal or home use which is utilized to print simple documents such as to-do lists, travel itineraries, and shopping lists. On the other hand, there are types of printers used for commercial settings. These are larger printers used to print a bigger batch of documents. Whether you need a digital press or work group laser printer, renting a unit can offer a wide variety of benefits for your business. Renting instead of investing for your own unit acts as a great method of improving cash flow and provide a device to maintain a competitive advantage over your direct competitors in the industry.",
   iconDescription: [
@@ -34,8 +33,7 @@ const blogItem2 = {
 const blogItem3 = {
   imageKey: "/paper-printer.jpeg",
   title: "How much does it cost to rent a printer? | Printer Rentals PH",
-  titleLink: "/benefits-of-renting-a-printer",
-  buttonLink: "/benefits-of-renting-a-printer",
+  link: "/2019/02/17/cost-rent-printer",
   description:
     "How much does it cost to rent a printer? We can help you with your question. Avoiding hassle is one of the major reasons why companies rent printers. So, Printer…",
   iconDescription: [

@@ -20,7 +20,7 @@ const MoreInformation = () => {
         Address:
       </Typography>
       <Typography variant="h2" className="mb-6 max-w-96">
-        2nd Floor, P.B. Zapanta Bldg, Rizal Ave. Cor Cortez St., Taytay Rizal
+        Blk 9 Lot 3 Emerald St. Ciudad Grande 1, Muzon, Taytay, Rizal
       </Typography>
       <Typography variant="h2" fontWeight="bold" className="text-gray-800">
         Phone:

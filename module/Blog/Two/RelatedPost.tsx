@@ -5,8 +5,7 @@ import { LucideClock, LucideFolderOpen, LucideTag } from "lucide-react";
 const blogItem = {
   imageKey: "/woman-question.jpeg",
   title: "Difference Between Leasing and Buying Printers | Printer Rentals PH",
-  titleLink: "/difference-between-leasing-and-buying-of-printers",
-  buttonLink: "/difference-between-leasing-and-buying-of-printers",
+  link: "/2019/07/03/difference-between-leasing-and-buying-printers",
   description:
     "Printers, in businesses small or large, are essential equipment. While companies tend to be digital, there will always be a need for printers. A small business will go through a…",
   iconDescription: [
@@ -35,8 +34,7 @@ const blogItem = {
 const blogItem3 = {
   imageKey: "/paper-printer.jpeg",
   title: "How much does it cost to rent a printer? | Printer Rentals PH",
-  titleLink: "/benefits-of-renting-a-printer",
-  buttonLink: "/benefits-of-renting-a-printer",
+  link: "/2019/02/17/cost-rent-printer",
   description:
     "How much does it cost to rent a printer? We can help you with your question. Avoiding hassle is one of the major reasons why companies rent printers. So, Printer…",
   iconDescription: [

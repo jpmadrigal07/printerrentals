@@ -43,7 +43,7 @@ const Header = () => {
             </div>
             <div className="flex items-center space-x-2">
               <FolderOpen className="h-5 w-5 text-[#ffffff80]" />
-              <Link href="#">
+              <Link href="/category/printer">
                 <Typography
                   variant="h3"
                   className="text-[#ffffff80] hover:text-gray-200"
