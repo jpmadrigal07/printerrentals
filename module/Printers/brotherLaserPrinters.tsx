@@ -1,8 +1,6 @@
 import Description from "./Content/Description";
 import Title from "./Content/Title";
-import l2365 from "@/common/assets/HLL2365DW-350x350.jpeg";
 import l2540 from "@/common/assets/DCPL2540DW-600x600.jpeg";
-import l2740 from "@/common/assets/DCPL2540DW-600x600.jpeg";
 import l2460 from "@/common/assets/L2460-600x600.png";
 import l2640 from "@/common/assets/L2640-600x600.png";
 import l5100 from "@/common/assets/L5100-600x600.png";
@@ -13,55 +11,6 @@ import l8340 from "@/common/assets/L8340-600x600.png";
 import List from "./Content/List";
 
 export const brotherLaserPrinters = [
-  {
-    id: "hl-l2365dw",
-    model: "HL L2365DW",
-    image: l2365,
-    pricePerMonth: "3,000.00 / Month",
-    description:
-      "Boost your productivity with Brother’s HL-L2365DW monochrome laser printer. With high-speed printing of up to 30 pages per minute (ppm) and multiple valuable features, you will have a printing experience like no other. Plus, you will get a 2,600-page high yield toner that comes with your printer.",
-    type: "Brother Laserjet",
-    descriptions: () => {
-      return (
-        <>
-          <Description text="A professional mono laser printer for the small or home office with both wired and wireless network compatibility." />
-          <br />
-          <Description text="Speed up to 30ppm, 250 sheet paper tray and double-sided printing as standard. Optional cost-effective, high-yield toner cartridges available." />
-          <br />
-          <Description text="The HL-L2365DW combines professional mono laser print with versatile connectivity options, perfect for Small Offices." />
-          <br />
-          <Description text="Wired and wireless network-ready, prepare to print and scan from anywhere using the Brother iPrint&Scan app, Google Cloud Print, Apple AirPrint and Wi-Fi Direct. Wherever you are in the office, professional printing is only a press of a button away." />
-          <br />
-          <Description text="With speeds of up to 30ppm and a 250 sheet paper tray you can focus on the tasks that matter, safe in the knowledge that your print jobs will be professionally delivered quickly and efficiently, without the need to refill the paper tray in between jobs." />
-          <br />
-          <Description text="Added efficiency can be found in the inbox 1200 page toner, double-sided printing feature and optional cost-effective, high-yield toner cartridges to both reduce waste and running costs." />
-        </>
-      );
-    },
-    specifications: () => {
-      return (
-        <>
-          <List
-            lists={[
-              "Single function (print only)",
-              "Print with 30ppm high speed",
-              "Print up to Legal size",
-              "Automatic 2 sided print",
-              "Wired and Wireless Lan",
-              "Can print up to 2600 pages per cartridge",
-            ]}
-            className="mb-6"
-          />
-          <Title className="mb-5" variant="h3" text="INCLUSIONS:" />
-          <List
-            lists={["4 toners maximum refill", "Free maintenance"]}
-            className="mb-6"
-          />
-        </>
-      );
-    },
-    related: ["mfc-l2740dw", "dcp-l2540dw", "hl-l2460dw"],
-  },
   {
     id: "dcp-l2540dw",
     model: "DCP L2540DW",
@@ -97,44 +46,7 @@ export const brotherLaserPrinters = [
         </>
       );
     },
-    related: ["hl-l2365dw", "mfc-l2740dw", "hl-l2460dw"],
-  },
-  {
-    id: "mfc-l2740dw",
-    model: "MFC L2740DW",
-    image: l2740,
-    pricePerMonth: "4,500.00 / Month",
-    description:
-      "Compact Laser All-in-One with Wireless Networking and Advanced Duplex.",
-    type: "Brother Laserjet",
-    descriptions: () => {
-      return (
-        <Description text="The Brother MFC-L2740DW is a reliable, affordable monochrome laser all-in-one with an up to 35-page automatic document feeder for home or small office use. This desk-friendly, compact all-in-one has an up to 250-sheet capacity tray, connects with ease via wireless networking or Ethernet, and prints and copies at up to 32ppm‡;. Automatic duplex printing, plus single-pass duplex scanning and copying. 2.7″ color TouchScreen Display for intuitive menu navigation. Print from compatible mobile devices over your wireless network‡;. Scan documents to a variety of destinations, including popular cloud services‡;. High-speed faxing. 1-year limited warranty plus free phone support for life of your product." />
-      );
-    },
-    specifications: () => {
-      return (
-        <>
-          <List
-            lists={[
-              "5-in-1 multi-function monochrome",
-              "Print, Scan, Copy, Fax, & Internet fax up to Legal Size",
-              "Print with 30ppm high speed",
-              "Automatic 2 sided print/copy/scan",
-              "Wired and Wireless Lan",
-              "Can print up to 2600 pages per cartridge",
-            ]}
-            className="mb-6"
-          />
-          <Title className="mb-5" variant="h3" text="INCLUSIONS:" />
-          <List
-            lists={["4 toners maximum refill", "Free maintenance"]}
-            className="mb-6"
-          />
-        </>
-      );
-    },
-    related: ["dcp-l2540dw", "hl-l2365dw", "hl-l2460dw"],
+    related: ["hl-l2460dw"],
   },
   {
     id: "hl-l2460dw",
@@ -220,7 +132,7 @@ export const brotherLaserPrinters = [
         />
       );
     },
-    related: ["dcp-l2640dw", "dcp-l2540dw", "hl-l2365dw"],
+    related: ["dcp-l2640dw", "dcp-l2540dw"],
   },
   {
     id: "dcp-l2640dw",
@@ -308,7 +220,7 @@ export const brotherLaserPrinters = [
         />
       );
     },
-    related: ["mfc-l2740dw", "dcp-l2540dw", "hl-l5100dn"],
+    related: ["dcp-l2540dw", "hl-l5100dn"],
   },
   {
     id: "hl-l5100dn",
@@ -582,7 +494,7 @@ export const brotherLaserPrinters = [
         />
       );
     },
-    related: ["hl-l8360cdw", "mfc-l2740dw", "hl-l2365dw"],
+    related: ["hl-l8360cdw"],
   },
   {
     id: "hl-l3280cdw",
