@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/common/components/ui/Button";
 import { Typography } from "@/common/components/ui/Typography";
 
-interface BlogItem {
+type T_CategoryItem = {
   imageKey: string;
   title: string;
   link: string;
@@ -17,18 +17,18 @@ interface BlogItem {
       | { title: string; link: string }
       | { title: string; link: string }[];
   }[];
-}
+};
 
-interface BlogItemProps {
-  blogItem: BlogItem;
-}
+type CategoryItemProps = {
+  categoryItem: T_CategoryItem;
+};
 
-const BlogItemComponent: React.FC<BlogItemProps> = ({ blogItem }) => {
+const CategoryItem: React.FC<CategoryItemProps> = ({ categoryItem }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   const renderDescription = () => {
     const maxLength = 150;
-    const { description } = blogItem;
+    const { description } = categoryItem;
 
     if (description.length <= maxLength || showFullDescription) {
       return (
@@ -45,9 +45,9 @@ const BlogItemComponent: React.FC<BlogItemProps> = ({ blogItem }) => {
         <Typography variant="h2" className="mt-2 md:mt-4">
           {truncatedDescription}
         </Typography>
-        <Link href={blogItem.link}>
+        <Link href={categoryItem.link}>
           <Button size="lg" variant="outline" className="mt-6 mb-8 md:my-8">
-            <Typography variant="h2">Read more</Typography>
+            <Typography variant="h2">Read More</Typography>
           </Button>
         </Link>
       </>
@@ -55,25 +55,27 @@ const BlogItemComponent: React.FC<BlogItemProps> = ({ blogItem }) => {
   };
 
   return (
-    <div className="blog-item">
-      <Link href={blogItem.link}>
-        <Image
-          src={blogItem.imageKey}
-          width={900}
-          height={900}
-          alt={blogItem.title}
-          className="blog-image"
-        />
+    <div className="category-item">
+      <Link href={categoryItem.link}>
+        <div className="relative w-full h-[320px] md:h-[620px] lg:h-[900px]">
+          <Image
+            src={categoryItem.imageKey}
+            fill
+            objectFit="cover"
+            alt={categoryItem.title}
+            className="category-image"
+          />
+        </div>
       </Link>
       <div className="mt-4">
-        <Link href={blogItem.link}>
+        <Link href={categoryItem.link}>
           <Typography className="hover:text-yellow-400 transition ease-in duration-300 text-[24px] font-medium">
-            {blogItem.title}
+            {categoryItem.title}
           </Typography>
         </Link>
 
         <div className="text-gray-600 md:flex md:flex-wrap md:gap-x-6 md:gap-y-2 lg:gap-6 items-center mt-2 md:mt-4">
-          {blogItem.iconDescription.map((iconDesc, index) => (
+          {categoryItem.iconDescription.map((iconDesc, index) => (
             <div key={index} className="flex gap-2 items-center">
               {iconDesc.icon}
               {typeof iconDesc.description === "string" ? (
@@ -108,4 +110,4 @@ const BlogItemComponent: React.FC<BlogItemProps> = ({ blogItem }) => {
   );
 };
 
-export default BlogItemComponent;
+export default CategoryItem;
