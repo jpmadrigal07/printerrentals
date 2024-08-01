@@ -8,8 +8,7 @@ import { Typography } from "@/common/components/ui/Typography";
 interface BlogItem {
   imageKey: string;
   title: string;
-  titleLink: string;
-  buttonLink: string;
+  link: string;
   description: string;
   iconDescription: {
     icon: JSX.Element;
@@ -46,7 +45,7 @@ const BlogItemComponent: React.FC<BlogItemProps> = ({ blogItem }) => {
         <Typography variant="h2" className="mt-2 md:mt-4">
           {truncatedDescription}
         </Typography>
-        <Link href={blogItem.buttonLink}>
+        <Link href={blogItem.link}>
           <Button size="lg" variant="outline" className="mt-6 mb-8 md:my-8">
             <Typography variant="h2">
               {showFullDescription ? "Show less" : "Show more"}
@@ -59,15 +58,17 @@ const BlogItemComponent: React.FC<BlogItemProps> = ({ blogItem }) => {
 
   return (
     <div className="blog-item">
-      <Image
-        src={blogItem.imageKey}
-        width={900}
-        height={900}
-        alt={blogItem.title}
-        className="blog-image"
-      />
+      <Link href={blogItem.link}>
+        <Image
+          src={blogItem.imageKey}
+          width={900}
+          height={900}
+          alt={blogItem.title}
+          className="blog-image"
+        />
+      </Link>
       <div className="mt-4">
-        <Link href={blogItem.titleLink}>
+        <Link href={blogItem.link}>
           <Typography className="hover:text-yellow-400 transition ease-in duration-300 text-[24px] font-medium">
             {blogItem.title}
           </Typography>

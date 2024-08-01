@@ -4,9 +4,9 @@ import { LucideClock, LucideFolderOpen, LucideTag } from "lucide-react";
 import BlogItemComponent from "./BlogItemPhotoDescription";
 
 const items = [
-  { item: "Brother InkJet", link: "/printers/#brother-inkjet" },
-  { item: "Brother LaserJet", link: "/printers/#brother-laserjet" },
-  { item: "Epson InkJet", link: "/printers/#epson-inkjet" },
+  { item: "Brother InkJet", link: "/printers#brother-inkjet" },
+  { item: "Brother LaserJet", link: "/printers#brother-laserjet" },
+  { item: "Epson InkJet", link: "/printers#epson-inkjet" },
 ];
 const pages = [
   { item: "Home", link: "/" },
@@ -16,9 +16,9 @@ const pages = [
   { item: "Contact", link: "/contact" },
 ];
 const socMed = [
-  { item: "Facebook", link: "/facebook.com" },
-  { item: "Twitter", link: "/twitter.com" },
-  { item: "Instagram", link: "/instagram.com" },
+  { item: "Facebook", link: "https://www.facebook.com/printerrentalsph" },
+  { item: "Twitter", link: "https://twitter.com" },
+  { item: "Instagram", link: "https://instagram.com" },
 ];
 
 const blogItems = [
@@ -26,8 +26,7 @@ const blogItems = [
     imageKey: "/woman-question.jpeg",
     title:
       "Difference Between Leasing and Buying Printers | Printer Rentals PH",
-    titleLink: "/difference-between-leasing-and-buying-of-printers",
-    buttonLink: "/difference-between-leasing-and-buying-of-printers",
+    link: "/2019/07/03/difference-between-leasing-and-buying-printers",
     description:
       "Printers, in businesses small or large, are essential equipment. While companies tend to be digital, there will always be a need for printers. A small business will go through a…",
     iconDescription: [
@@ -55,8 +54,7 @@ const blogItems = [
   {
     imageKey: "/hand-okay.png",
     title: "What are the Benefits of Renting a Printer? | Printer Rentals PH",
-    titleLink: "/benefits-of-renting-a-printer",
-    buttonLink: "/benefits-of-renting-a-printer",
+    link: "/2019/07/03/benefits-of-renting-a-printer",
     description:
       "Printers are a necessity in both personal and business setting so it is important to know the benefits of renting a printer. Printers come in a wide variety of choices. Some printers are for personal or home use which is utilized to print simple documents such as to-do lists, travel itineraries, and shopping lists. On the other hand, there are types of printers used for commercial settings. These are larger printers used to print a bigger batch of documents. Whether you need a digital press or work group laser printer, renting a unit can offer a wide variety of benefits for your business. Renting instead of investing for your own unit acts as a great method of improving cash flow and provide a device to maintain a competitive advantage over your direct competitors in the industry.",
     iconDescription: [
@@ -83,8 +81,7 @@ const blogItems = [
   {
     imageKey: "/paper-printer.jpeg",
     title: "How much does it cost to rent a printer? | Printer Rentals PH",
-    titleLink: "/benefits-of-renting-a-printer",
-    buttonLink: "/benefits-of-renting-a-printer",
+    link: "/2019/02/17/cost-rent-printer",
     description:
       "How much does it cost to rent a printer? We can help you with your question. Avoiding hassle is one of the major reasons why companies rent printers. So, Printer…",
     iconDescription: [
@@ -131,7 +128,11 @@ const index = () => {
             <TitleDescriptionLink itemLinks={pages} title={pagesTitle} />
           </div>
           <div>
-            <TitleDescriptionLink itemLinks={socMed} title={socMedTitle} />
+            <TitleDescriptionLink
+              itemLinks={socMed}
+              title={socMedTitle}
+              target="_blank"
+            />
           </div>
         </div>
       </div>
