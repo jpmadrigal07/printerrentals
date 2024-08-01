@@ -1,9 +1,19 @@
+import { sendEmail } from '@/common/helpers/sendEmail';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
     // Extract the token from the request body
-    const { token } = await req.json();
+    const { 
+      token, 
+      email = "",
+      subject = "",
+      name = "",
+      phoneNumber = "",
+      message = "",
+      comment = "",
+      website = "",
+    } = await req.json();
 
     if (!token) {
       return NextResponse.json({ error: 'Required value are missing' }, { status: 400 });
@@ -21,6 +31,17 @@ export async function POST(req: NextRequest) {
     );
 
     const result = await verify.json();
+    if(result.success) {
+      sendEmail({
+        email,
+        subject,
+        name,
+        phoneNumber,
+        message,
+        comment,
+        website
+      })
+    }
     return NextResponse.json({ success: result.success });
   } catch (error: unknown) {
     return Response.json({ error }, { status: 500 });

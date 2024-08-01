@@ -1,6 +1,5 @@
 import { Button } from "@/common/components/ui/Button";
 import { Typography } from "@/common/components/ui/Typography";
-import { sendEmail } from "@/common/helpers/sendEmail";
 import { Mail, Pencil, Phone, UserRound } from "lucide-react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -18,7 +17,7 @@ const ContactForm = () => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [captcha, setCaptcha] = useState<string | null>("");
 
-  const { register, handleSubmit } = useForm<T_Contact>();
+  const { register, handleSubmit, reset } = useForm<T_Contact>();
 
   const onSubmit = (data: T_Contact) => {
     if (captcha) {
@@ -34,9 +33,16 @@ const ContactForm = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ token: captcha }), // token will come from react-google-recaptcha implementation
+      body: JSON.stringify({ 
+        token: captcha,
+        name: data.name,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+        message: data.message,
+        subject: "Contact Us",
+      }),
     })
-      .then((response) => {
+      .then(async (response) => {
         if (!response.ok) {
           return response.json().then((errorData) => {
             throw new Error(errorData.error);
@@ -45,14 +51,10 @@ const ContactForm = () => {
         return response.json();
       })
       .then(() => {
-        // When the captcha is verified, send the email
-        sendEmail({
-          name: data.name,
-          email: data.email,
-          phoneNumber: data.phoneNumber,
-          message: data.message,
-        });
-        toast.success("Email sent successfully!");
+        toast.success("Email sent successfully!", { duration: 5000 });
+        reset()
+        recaptchaRef.current?.reset();
+        setCaptcha("");
       })
       .catch((error) => {
         toast.error(error.message);

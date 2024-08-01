@@ -11,8 +11,6 @@ import WhoWeAreSection from "@/module/Home/WhoWeAreSection";
 import WhySection from "@/module/Home/WhySection";
 import WhyUsSection from "@/module/Home/WhyUsSection";
 import { Metadata } from "next";
-import { sendEmail } from "@/common/helpers/sendEmail";
-import toast from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: `${APP_NAME} - Printer Rental, Printer Repair and Ink and Toner Refill`,
@@ -37,33 +35,6 @@ export const metadata: Metadata = {
 };
 
 const HomePage = () => {
-  const initiateEmailSend = () => {
-    fetch('/api/verify-captcha', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ token: 'YOUR_RECAPTCHA_TOKEN' }), // token will come from react-google-recaptcha implementation
-    })
-      .then(response => {
-        if (!response.ok) {
-          return response.json().then(errorData => {
-            throw new Error(errorData.error);
-          });
-        }
-        return response.json();
-      })
-      .then(() => {
-        // When the captcha is verified, send the email
-        sendEmail({})
-        // resetForm();
-        toast.success("Email sent successfully!");
-      })
-      .catch(error => {
-        toast.error(error.message);
-        console.error('Error:', error.message);
-      });
-  }
   return (
     <div>
       <Hero />
