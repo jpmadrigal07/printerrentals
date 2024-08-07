@@ -10,14 +10,14 @@ interface EmailTemplateProps {
   website: string;
 }
 
-const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
+export const EmailTemplate = ({
   name,
   email,
   phoneNumber,
   message,
   comment,
   website,
-}) => (
+}: EmailTemplateProps) => (
   <div>
     {name && (
       <h3>
@@ -52,5 +52,3 @@ const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
     )}
   </div>
 );
-
-export default EmailTemplate;
