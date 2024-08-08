@@ -1,8 +1,8 @@
 import { render } from '@react-email/components';
-import sgMail from "@sendgrid/mail";
+import postmark from "postmark";
 import { EmailTemplate } from "@/common/components/Email/EmailTemplate";
 
-sgMail.setApiKey(process.env.RESEND_API_KEY || '');
+const client = new postmark.ServerClient(process.env.POSTMARK_API_KEY || '');
 
 interface EmailTemplateProps {
   name: string;
@@ -17,17 +17,10 @@ interface EmailTemplateProps {
 export const sendEmail = async (props: EmailTemplateProps) => {
   const emailHtml = render(<EmailTemplate {...props} />);
   const msg = {
-    to: process.env.EMAIL_RECEIVER || "jp.madrigal07@gmail.com",
-    from: "Printer Rentals PH <john@zkript.dev>",
-    subject: props.subject,
-    html: emailHtml
+    To: process.env.EMAIL_RECEIVER || "jp.madrigal07@gmail.com",
+    From: "Printer Rentals PH <john@zkript.dev>",
+    Subject: props.subject,
+    HtmlBody: emailHtml
   }
-  sgMail
-    .send(msg)
-    .then(() => {
-      console.log('Email sent')
-    })
-    .catch((error) => {
-      console.error(error)
-    })
+  client.sendEmail(msg);
 };
