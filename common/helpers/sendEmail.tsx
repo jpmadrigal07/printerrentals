@@ -1,5 +1,5 @@
 import { render } from '@react-email/components';
-import postmark from "postmark";
+const postmark = require("postmark");
 import { EmailTemplate } from "@/common/components/Email/EmailTemplate";
 
 const client = new postmark.ServerClient(process.env.POSTMARK_API_KEY || '');
