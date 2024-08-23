@@ -23,7 +23,7 @@ export const brotherInkjetPrinters = [
     id: "mfc-j200",
     model: "MFC J200",
     image: j200,
-    pricePerMonth: "3,500.00 / Month",
+    pricePerMonth: "2,500.00 / Month",
     description:
       "Laminated Piezo Print Head provides reliability and optimises undisrupted high-volume printing. Save with low-cost super high yield InkBenefit cartridges, fax, automatic document feeder and wireless networking capability.",
     type: "Brother Inkjet",
@@ -55,7 +55,7 @@ export const brotherInkjetPrinters = [
     id: "mfc-j2330dw",
     model: "MFC J2330DW",
     image: j2330,
-    pricePerMonth: "4,000.00 / Month",
+    pricePerMonth: "3,000.00 / Month",
     description:
       "The MFC-J2330DW Business Smart Inkjet All-in-One prints up to A3 and copies, scans and faxes up to A4.",
     type: "Brother Inkjet",
@@ -106,7 +106,7 @@ export const brotherInkjetPrinters = [
     id: "mfc-j2730dw",
     model: "MFC J2730DW",
     image: j2730,
-    pricePerMonth: "5,000.00 / Month",
+    pricePerMonth: "4,000.00 / Month",
     description:
       "The MFC-J2730DW Business Smart Inkjet All-in-One prints up to A3 and copies, scans and faxes up to A4.",
     type: "Brother Inkjet",

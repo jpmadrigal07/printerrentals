@@ -1,6 +1,5 @@
 import Description from "./Content/Description";
 import Title from "./Content/Title";
-import l1300 from "@/common/assets/L1300-150x150.png";
 import l6170 from "@/common/assets/L6170-150x150.png";
 import l121 from "@/common/assets/L121-600x600.png";
 import l3210 from "@/common/assets/L3210-600x600.png";
@@ -8,73 +7,68 @@ import l3250 from "@/common/assets/L3250-600x600.png";
 import l5290 from "@/common/assets/L5290-600x600.png";
 import l6270 from "@/common/assets/L6270-600x600.png";
 import l13002 from "@/common/assets/L1300-600x600.png";
+import l11050 from "@/common/assets/L11050-600x600.png";
 import List from "./Content/List";
 import { Typography } from "@/common/components/ui/Typography";
 import Link from "next/link";
 
 export const epsonInkjetPrinters = [
   {
-    id: "epson-l1300-a3-ink-tank-printer",
-    model: "Epson L1300 A3 Ink Tank Printer",
-    image: l1300,
+    id: "epson-ecoTank-l11050-ink-tank-printer",
+    model: "Epson EcoTank L11050 Ink Tank Printer",
+    image: l11050,
     pricePerMonth: "5,000.00 / Month",
     description:
-      "The Epson L1300 is the worlds first 4-colour, A3+ original ink tank system printer, bringing ultra affordability to high quality A3 document printing in a big way.",
+      "Small in size, but with big capabilities. With a high capacity integrated ink tank and a reliably durable PrecisionCore printhead, the L11050 is built for high volume printing. Easy access to the pick-up roller from the front, and to the maintenance box from the back helps reduce overall repair downtime. The L11050 is also compatible with 003 inks, and can print up to 4,500 black pages and 7,000 colour pages. All these perks add up to a compact size that would fit comfortably in small office spaces. L11050 enables mobile printing wirelessly using Epson Smart Panel. You can download the Epson Smart Panel app on your mobile device to enjoy an intuitive control centre that enables you to set up, streamline the print head cleaning process and monitor your printer effortlessly.",
     type: "Epson Inkjet",
     descriptions: () => {
       return (
         <>
           <Title
             variant="h1"
-            text="Superb Savings and Page Yield"
+            text="Faster print speed (as compared with predecessor)"
             className="mb-7"
           />
-          <Description text="High capacity integrated ink tanks and highly affordable genuine ink bottles at just US$5.50 each add up to greater savings. With a bundled starter kit of 5 bottles of Epson Ink, the L1300 yields up to 7,100 pages (black)*." />
+          <Description
+            text="With PrecisionCore Printhead enabled, L11050 has faster printing speed up to 15 ipm for A4 printing and up to 3 ipm for A3 colour printing. Improved mechanical design on parts that support paper feed-out contributes to longer product life — 2 years or 50,000 pages."
+            className="mb-12"
+          />
           <br />
+          <Title variant="h1" text="Easy Maintenance" className="mb-7" />
           <Description
-            text="*Quoted yields are extrapolated based on Epson original methodology from the print simulation of Test Patterns provided in ISO/IEC 24712. Quoted yields are NOT based on ISO/IEC 24711. Actual yields may vary depending on manner of usage and print pattern. 7100 pages is based on yield from two black ink bottles."
+            text="With a high-capacity integrated ink tank and a reliably durable PrecisionCore printhead, the L11050 is built for high-volume printing. Easy access to the pick-up roller from the front, and to the maintenance box from the back helps reduce overall repair downtime. With Piezo Technology, there is no heat damage to the printhead, reducing the need of printhead replacement."
             className="mb-12"
           />
           <Title
             variant="h1"
-            text="Designed for High Productivity"
+            text="Smart Usability with Epson Smart Panel"
             className="mb-7"
           />
           <Description
-            text="The L1300 features an advanced printhead to achieve fast print speeds of up to 15ipm (black)."
+            text="Epson Smart Panel app on your mobile phone acts as an intuitive center that you can use to monitor your printer, track ink levels, and receive print head cleaning notifications."
             className="mb-12"
           />
           <Title
             variant="h1"
-            text="Super Reliability and Print Quality"
+            text="Superb Savings & High Page Yield"
             className="mb-7"
           />
           <Description
-            text="Designed for continuous printing performance, Epson’s renowned Micro Piezo™ printhead is not only highly reliable in operation, it also delivers an astoundingly high resolution of 5760dpi. When paired with genuine Epson formulated inks, the L1300 delivers exceptionally high quality prints for all your business and creative needs."
+            text="Don’t compromise on cost as you print. With EcoTank L11050, you’ll be able to save costs as each set of bottle inks has an ultra-high yield of up to 7,000 pages."
             className="mb-12"
           />
-          <Title variant="h1" text="Media Flexibility" className="mb-7" />
+          <Title variant="h1" text="Compact Design" className="mb-7" />
           <Description
-            text="The L1300 comes with a rear-feed tray that accepts a wide variety of printing media, including thick paper, photo paper, envelopes, labels and more that allows you to accomplish all manner of printing jobs with ease."
-            className="mb-12"
-          />
-          <Title variant="h1" text="Space-saving Design" className="mb-7" />
-          <Description
-            text="Working with the limited office space of SOHO businesses, the L120 is compactly designed to take up lesser space than previous models. Its smaller footprint means you can now fit them comfortably anywhere in your home or office."
-            className="mb-12"
-          />
-          <Title variant="h1" text="Hassle-free Operation." className="mb-7" />
-          <Description
-            text="Epson’s original ink tank system is designed for smooth, no-mess operation in corporate and SOHO environments."
+            text="Compact and sleek with 40% less in volume compared to the predecessor, the big capacity ink tank design is integrated into the printer to allow the printer to have a small footprint."
             className="mb-12"
           />
           <Title
             variant="h1"
-            text="Quality That Shines. Value That Lasts."
+            text="Spill-free Refilling Ink Bottles"
             className="mb-7"
           />
           <Description
-            text="Epson genuine ink bottles are individually sealed to ensure the purity of its contents and formulated to deliver outstanding high-volume print quality with L-Series printers. Choose Epson genuine ink bottles to enjoy lasting quality with your L-Series printer and low printing costs."
+            text="Spill-free bottle design with designated individual nozzle to fit each ink tank makes ink refilling easy."
             className="mb-12"
           />
           <Title
@@ -83,15 +77,24 @@ export const epsonInkjetPrinters = [
             className="mb-7"
           />
           <Description
-            text="Epson genuine ink bottles are individually sealed to ensure the purity of its contents and formulated to deliver outstanding high-volume print quality with L-Series printers. Choose Epson genuine ink bottles to enjoy lasting quality with your L-Series printer and low printing costs."
+            text="Epson genuine ink bottles are formulated to deliver outstanding high-volume print quality. Every bottle is individually sealed to ensure the purity of ink and comes with a smart tip designed for mess-free refills. Choose Epson genuine ink bottles to enjoy lasting quality with your printer and low printing costs."
             className="mb-12"
           />
           <Title
             variant="h1"
-            text="1-Year Warranty for Peace of Mind"
+            text="Epson Heat-Free Technology"
             className="mb-7"
           />
-          <Description text="Enjoy warranty coverage of one year or 30,000 prints, whichever comes first, for maximum value from your printer and freedom from maintenance worries." />
+          <Description
+            text="Achieve high speed printing at lower power consumption with Epson Heat-Free Technology as no heat is required during the ink ejection process."
+            className="mb-12"
+          />
+          <Title
+            variant="h1"
+            text="Epson Warranty for Peace of Mind"
+            className="mb-7"
+          />
+          <Description text="Enjoy warranty coverage of up to 2 years or 50,000 prints (whichever comes first) for maximum value from your printer and freedom from worries over its maintenance. Epson’s warranty includes coverage of printhead, which is most important for a printer designed for high volume printing." />
         </>
       );
     },
@@ -99,15 +102,21 @@ export const epsonInkjetPrinters = [
       return (
         <List
           lists={[
-            "High-yield ink bottles",
-            "Print speed up to 15ipm",
-            "Print resolution up to 5760 x 1440 dpi",
+            "Compact and Durable Ecological Design",
+            "Print up to A3+",
+            "Easy operation with Epson Smart Panel version 4.3, with Print Head Cleaning notification",
+            "Replaceable Maintenance Box and Pick Up Roller",
+            "Ultra-high page yield of 7,000 pages (colour)",
+            "Easy operation with Epson Smart Panel",
+            "2-year warranty or 50,000 pages, whichever comes first",
+            "Powered by Epson Heat-Free Technology",
           ]}
         />
       );
     },
     related: [
       "epson-l6170-wi-fi-duplex-all-in-one-ink-tank-printer-with-adf",
+      "epson-l5290",
     ],
   },
   {
@@ -262,9 +271,7 @@ export const epsonInkjetPrinters = [
         />
       );
     },
-    related: [
-      "epson-l1300-a3-ink-tank-printer",
-    ],
+    related: ["epson-ecoTank-l11050-ink-tank-printer", "epson-l121"],
   },
   {
     id: "epson-l121",
@@ -370,10 +377,7 @@ export const epsonInkjetPrinters = [
         </>
       );
     },
-    related: [
-      "epson-l121",
-      "epson-l1300-a3-ink-tank-printer",
-    ],
+    related: ["epson-l121", "epson-ecoTank-l11050-ink-tank-printer"],
   },
 
   {
@@ -483,10 +487,7 @@ export const epsonInkjetPrinters = [
         />
       );
     },
-    related: [
-      "epson-l6270",
-      "epson-l1300",
-    ],
+    related: ["epson-l6270", "epson-l1300"],
   },
 
   {
@@ -543,9 +544,7 @@ export const epsonInkjetPrinters = [
         />
       );
     },
-    related: [
-      "epson-l6170-wi-fi-duplex-all-in-one-ink-tank-printer-with-adf",
-    ],
+    related: ["epson-l6170-wi-fi-duplex-all-in-one-ink-tank-printer-with-adf"],
   },
   {
     id: "epson-l1300",
