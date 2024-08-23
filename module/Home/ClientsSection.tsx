@@ -11,25 +11,25 @@ const ClientsSection = () => {
       </Typography>
       <div className="flex flex-wrap justify-center items-center gap-6 md:gap-20 mt-8">
         <FadeInImage
-          img="/ampc.png"
-          className="w-48 md:w-auto"
-          alt="ampc logo"
-          width={300}
-          height={300}
-          variant="fade-up"
-        />
-        <FadeInImage
-          img="/fiberhome.png"
-          className="w-48 md:w-auto"
-          alt="fiber logo"
-          width={300}
-          height={300}
-          variant="fade-up"
-        />
-        <FadeInImage
-          img="/banko.png"
+          img="/banko-1.png"
           className="w-48 md:w-auto"
           alt="banko logo"
+          width={300}
+          height={300}
+          variant="fade-up"
+        />
+        <FadeInImage
+          img="/avls.png"
+          className="w-48 md:w-auto"
+          alt="avls logo"
+          width={300}
+          height={300}
+          variant="fade-up"
+        />
+        <FadeInImage
+          img="/oro-oxygen.png"
+          className="w-48 md:w-auto"
+          alt="oro oxygen corporation logo"
           width={300}
           height={300}
           variant="fade-up"

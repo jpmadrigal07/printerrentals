@@ -2,6 +2,7 @@ import Image from "next/image";
 import ink_logo from "@/common/assets/ink-logo.png";
 import repair_logo from "@/common/assets/repair-logo.png";
 import printer_logo from "@/common/assets/printer-logo.png";
+import bondpaper_logo from "@/common/assets/bondpaper-logo.png";
 import { Typography } from "../../common/components/ui/Typography";
 import FadeInImage from "../../common/components/FadeInImage";
 
@@ -27,6 +28,13 @@ const featureData = [
     image: ink_logo,
     alt: "INK-LOGO",
   },
+  {
+    title: "BONDPAPER SUPPLY",
+    description:
+      "We guarantee a seamless paper supply, so you can print with confidence, every time.",
+    image: bondpaper_logo,
+    alt: "BONDPAPER-LOGO",
+  },
 ];
 
 interface ImageAnimationProps {
@@ -35,7 +43,10 @@ interface ImageAnimationProps {
 
 const FeatureSection = ({ animationVariant }: ImageAnimationProps) => {
   return (
-    <div id="learn-more" className="flex flex-col sm:flex-row items-center justify-center gap-10 p-5 pt-20 pb-20 max-w-[1174px] mx-4 md:mx-10 2xl:mx-auto">
+    <div
+      id="learn-more"
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center justify-center gap-10 p-5 pt-20 pb-20 max-w-[1174px] mx-4 md:mx-10 2xl:mx-auto"
+    >
       {featureData.map((item) => (
         <div
           key={item.title}
