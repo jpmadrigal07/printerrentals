@@ -18,6 +18,7 @@ export const epsonInkjetPrinters = [
     model: "Epson EcoTank L11050 Ink Tank Printer",
     image: l11050,
     pricePerMonth: "5,000.00 / Month",
+    isRefurbished: false,
     description:
       "Small in size, but with big capabilities. With a high capacity integrated ink tank and a reliably durable PrecisionCore printhead, the L11050 is built for high volume printing. Easy access to the pick-up roller from the front, and to the maintenance box from the back helps reduce overall repair downtime. The L11050 is also compatible with 003 inks, and can print up to 4,500 black pages and 7,000 colour pages. All these perks add up to a compact size that would fit comfortably in small office spaces. L11050 enables mobile printing wirelessly using Epson Smart Panel. You can download the Epson Smart Panel app on your mobile device to enjoy an intuitive control centre that enables you to set up, streamline the print head cleaning process and monitor your printer effortlessly.",
     type: "Epson Inkjet",
@@ -124,6 +125,7 @@ export const epsonInkjetPrinters = [
     model: "Epson L6170 Wi-Fi Duplex All-in-One Ink Tank Printer with ADF",
     image: l6170,
     pricePerMonth: "4,000.00 / Month",
+    isRefurbished: false,
     description:
       "Experience high printing speeds and borderless printing for up to A4 size with Epson L6170 ink tank printer. Armed with PrecisionCore™ printheads, print speeds are improved for increased efficiency. The new tank design is integrated into the printer to allow the printer to have the smallest footprint* amongst all brands of ink tank printers that use bottled ink refills. Together with a new set of low-cost ink bottles which guarantees spill-free ink refilling and the paper-saving auto-duplex function, enjoy one of the lowest printing cost solutions you can find in the market. Maximise connectivity with a suite of Epson Connect features which enables printing on the go over a network.",
     type: "Epson Inkjet",
@@ -278,6 +280,7 @@ export const epsonInkjetPrinters = [
     model: "EPSON L121",
     image: l121,
     pricePerMonth: "2,000 / Month",
+    isRefurbished: false,
     description:
       "Expect great efficiency when printing with the EcoTank L121. Enjoy fast print performance and low cost per page, with high print yield of up to 4,500 pages for black-and-white, and 7,500 pages for colour. Sleek and compact, this is the perfect fit for offices with limited space.",
     type: "Epson Inkjet",
@@ -328,6 +331,7 @@ export const epsonInkjetPrinters = [
     model: "EPSON L3210",
     image: l3210,
     pricePerMonth: "2,500 / Month",
+    isRefurbished: false,
     description:
       "The multifunctional printing solutions - EcoTank L3210 is designed to improve business cost savings and print productivity. Expect a high print yield of up to 4,500 pages for black-and-white, and 7,500 pages for colour. You can even print borderless photos up to 4R size.",
     type: "Epson Inkjet",
@@ -385,6 +389,7 @@ export const epsonInkjetPrinters = [
     model: "EPSON L3250",
     image: l3250,
     pricePerMonth: "3,000 / Month",
+    isRefurbished: false,
     description:
       "The multi-functional EcoTank L3250 is designed to improve business cost savings and print productivity. Expect a high print yield of up to 4,500 pages for black-and-white, and 7,500 pages for colour. You can even print borderless photos up to 4R size.",
     type: "Epson Inkjet",
@@ -440,6 +445,7 @@ export const epsonInkjetPrinters = [
     model: "EPSON L5290",
     image: l5290,
     pricePerMonth: "4,000 / Month",
+    isRefurbished: false,
     description:
       "The economical, multifunction EcoTank L5290, lets you print, scan, copy and fax with ease. Ideal for businesses, this printer comes with a full suite of connectivity features including Wi-Fi Direct and Ethernet. Print wirelessly over network or directly from connected mobile devices.",
     type: "Epson Inkjet",
@@ -495,6 +501,7 @@ export const epsonInkjetPrinters = [
     model: "EPSON L6270",
     image: l6270,
     pricePerMonth: "5,000 / Month",
+    isRefurbished: false,
     description:
       "The multifunction Epson EcoTank printers L6270 delivers fast printouts and borderless printing for up to A4 size. Equipped with integrated ink tank, these printers havesmall footprints to fit any office. The affordable ink bottles, fitted with designated nozzles, ensure spill-free refilling.",
     type: "Epson Inkjet",
@@ -551,6 +558,7 @@ export const epsonInkjetPrinters = [
     model: "EPSON L1300",
     image: l13002,
     pricePerMonth: "5,000 / Month",
+    isRefurbished: false,
     description:
       "An integrated ultra-high-capacity ink tank system makes the L1300 perfect for heavy use where achieving the lowest cost per page is all important. Ideal for small offices needing to produce lengthy reports, advertising materials or CAD drawings, the L1300 comes with five",
     type: "Epson Inkjet",

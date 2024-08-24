@@ -45,7 +45,14 @@ const PrinterContent = () => {
             <Image src={filterPrinter[0]?.image} fill alt="" />
           </div>
           <div className="mx-7 md:mx-0">
-            <Typography className="text-3xl md:text-[40px] mb-3 md:mb-5 leading-normal">
+            {filterPrinter[0]?.isRefurbished && (
+              <div className="flex mb-4">
+                <Typography className="text-xs text-gray-500 bg-slate-200 py-2 px-3 rounded-sm">
+                  Refurbished
+                </Typography>
+              </div>
+            )}
+            <Typography variant="h1" className="text-3xl md:text-[40px] mb-3 md:mb-5 leading-normal">
               {filterPrinter[0]?.model}
             </Typography>
             <Typography className="text-[28px] md:text-3xl font-semibold mb-6">
@@ -181,6 +188,7 @@ const PrinterContent = () => {
               id={printer.id}
               image={printer.image}
               model={printer.model}
+              isRefurbished={printer.isRefurbished}
               pricePerMonth={printer.pricePerMonth}
               key={printer.model}
             />

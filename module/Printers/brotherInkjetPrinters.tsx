@@ -24,6 +24,7 @@ export const brotherInkjetPrinters = [
     model: "MFC J200",
     image: j200,
     pricePerMonth: "2,500.00 / Month",
+    isRefurbished: true,
     description:
       "Laminated Piezo Print Head provides reliability and optimises undisrupted high-volume printing. Save with low-cost super high yield InkBenefit cartridges, fax, automatic document feeder and wireless networking capability.",
     type: "Brother Inkjet",
@@ -56,6 +57,7 @@ export const brotherInkjetPrinters = [
     model: "MFC J2330DW",
     image: j2330,
     pricePerMonth: "3,000.00 / Month",
+    isRefurbished: true,
     description:
       "The MFC-J2330DW Business Smart Inkjet All-in-One prints up to A3 and copies, scans and faxes up to A4.",
     type: "Brother Inkjet",
@@ -105,6 +107,7 @@ export const brotherInkjetPrinters = [
   {
     id: "mfc-j2730dw",
     model: "MFC J2730DW",
+    isRefurbished: true,
     image: j2730,
     pricePerMonth: "4,000.00 / Month",
     description:
@@ -154,6 +157,7 @@ export const brotherInkjetPrinters = [
     model: "MFC J3530DW",
     image: j3530,
     pricePerMonth: "6,000.00 / Month",
+    isRefurbished: true,
     description:
       "The MFC-J3530DW Business Smart Inkjet All-in-One prints, copies, scans and faxes in full A3.",
     type: "Brother Inkjet",
@@ -229,6 +233,7 @@ export const brotherInkjetPrinters = [
     model: "MFC J3930DW",
     image: j3930,
     pricePerMonth: "7,000.00 / Month",
+    isRefurbished: true,
     description:
       "The MFC-J3930DW Business Smart Inkjet All-in-One prints, copies, scans and faxes in full A3.",
     type: "Brother Inkjet",
@@ -276,6 +281,7 @@ export const brotherInkjetPrinters = [
     model: "DCP T520W",
     image: t520,
     pricePerMonth: "2,500.00 / Month",
+    isRefurbished: false,
     description:
       "3-in-1 multifunction printer with wireless and mobile printing to work-on-the go.",
     type: "Brother Inkjet",
@@ -365,6 +371,7 @@ export const brotherInkjetPrinters = [
     model: "DCP T720DW",
     image: t720,
     pricePerMonth: "3,000.00 / Month",
+    isRefurbished: false,
     description:
       "Reliable multifunction printer with convenient 2-sided printing.",
     type: "Brother Inkjet",
@@ -456,6 +463,7 @@ export const brotherInkjetPrinters = [
     model: "DCP T820DW",
     image: t820,
     pricePerMonth: "3,500.00 / Month",
+    isRefurbished: false,
     description:
       "Business savings with duplex, high-speed multifunction printer.",
     type: "Brother Inkjet",
@@ -548,6 +556,7 @@ export const brotherInkjetPrinters = [
     model: "MFC T920DW",
     image: t920,
     pricePerMonth: "4,500.00 / Month",
+    isRefurbished: false,
     description:
       "The all-in-one printer with high volume printing at a low cost for businesses.",
     type: "Brother Inkjet",
@@ -640,6 +649,7 @@ export const brotherInkjetPrinters = [
     model: "HL T4000DW",
     image: t4000,
     pricePerMonth: "6,500.00 / Month",
+    isRefurbished: false,
     description:
       "Efficiency Engineered - A3 Refill Ink Tank Printer with Wireless & Ethernet Connectivity, Automatic 2-sided Color Print, Professionally Designed for Fast Print Speeds, Low Cost High Photo Quality with Ultra High Yield Ink Bottles, Wi-Fi Direct, Mobile & USB Print.",
     type: "Brother Inkjet",
@@ -785,6 +795,7 @@ export const brotherInkjetPrinters = [
     model: "MFC T4500DW",
     image: t4500,
     pricePerMonth: "9,000.00 / Month",
+    isRefurbished: false,
     description:
       "Efficiency Engineered - A3 Refill Ink Tank Multi-Function Center with Wireless & Ethernet Connectivity, Automatic 2-sided Color Print, ADF - Scan/Copy/Fax. Professionally Designed for Fast Print Speeds, Low Cost High Resolution Photo Quality with Ultra High Yield Ink Bottles, Wi-Fi Direct, Mobile & USB Print.",
     type: "Brother Inkjet",
@@ -930,6 +941,7 @@ export const brotherInkjetPrinters = [
     model: "MFC J2340DW",
     image: j2340,
     pricePerMonth: "4,000.00 / Month",
+    isRefurbished: false,
     description:
       "Fast Printing Ink Benefit Series Multifunction Center Printer.",
     type: "Brother Inkjet",
@@ -990,6 +1002,7 @@ export const brotherInkjetPrinters = [
     model: "MFC J3540DW",
     image: j3540,
     pricePerMonth: "5,500.00 / Month",
+    isRefurbished: false,
     description: "Fast print speed with 2.7” LCD Touch Panel Inkjet Printer.",
     type: "Brother Inkjet",
     descriptions: () => {
@@ -1049,6 +1062,7 @@ export const brotherInkjetPrinters = [
     model: "MFC J3940DW",
     image: j3940,
     pricePerMonth: "6,500.00 / Month",
+    isRefurbished: false,
     description: "Wired / Wireless network connectivity Inkjet Printer.",
     type: "Brother Inkjet",
     descriptions: () => {

@@ -1,6 +1,5 @@
 import FadeInImage from "@/common/components/FadeInImage";
 import { Typography } from "@/common/components/ui/Typography";
-import Link from "next/link";
 import React from "react";
 
 const ClientsSection = () => {
@@ -9,7 +8,7 @@ const ClientsSection = () => {
       <Typography variant="h2" fontWeight="semibold">
         SOME OF OUR SATISFIED CLIENTS
       </Typography>
-      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-20 mt-8">
+      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-20 mt-20">
         <FadeInImage
           img="/banko-1.png"
           className="w-48 md:w-auto"
@@ -32,6 +31,68 @@ const ClientsSection = () => {
           alt="oro oxygen corporation logo"
           width={300}
           height={300}
+          variant="fade-up"
+        />
+      </div>
+      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-20 mt-8">
+        <FadeInImage
+          img="/shakeys.jpg"
+          className="w-48 md:w-auto"
+          alt="banko logo"
+          width={300}
+          height={300}
+          variant="fade-up"
+        />
+        <FadeInImage
+          img="/hst.png"
+          className="w-48 md:w-auto"
+          alt="avls logo"
+          width={300}
+          height={300}
+          variant="fade-up"
+        />
+        <FadeInImage
+          img="/indorama.jpeg"
+          className="w-48 md:w-auto"
+          alt="oro oxygen corporation logo"
+          width={300}
+          height={300}
+          variant="fade-up"
+        />
+      </div>
+      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-20 mt-8">
+        <FadeInImage
+          img="/joliant.png"
+          className="w-48 md:w-auto"
+          alt="banko logo"
+          width={300}
+          height={300}
+          variant="fade-up"
+        />
+        <FadeInImage
+          img="/mdc.png"
+          className="w-48 md:w-auto"
+          alt="avls logo"
+          width={300}
+          height={300}
+          variant="fade-up"
+        />
+        <FadeInImage
+          img="/phirst.png"
+          className="w-48 md:w-auto"
+          alt="oro oxygen corporation logo"
+          width={300}
+          height={300}
+          variant="fade-up"
+        />
+      </div>
+      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-20 mt-16">
+        <FadeInImage
+          img="/advance-engineering.png"
+          className="w-48 md:w-auto"
+          alt="banko logo"
+          width={200}
+          height={200}
           variant="fade-up"
         />
       </div>

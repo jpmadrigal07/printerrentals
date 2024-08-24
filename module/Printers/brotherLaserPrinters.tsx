@@ -16,6 +16,7 @@ export const brotherLaserPrinters = [
     model: "DCP L2540DW",
     image: l2540,
     pricePerMonth: "4,000.00 / Month",
+    isRefurbished: false,
     description:
       "Laser Multi-Function Copier with Wireless Networking and Duplex Printing.",
     type: "Brother Laserjet",
@@ -53,6 +54,7 @@ export const brotherLaserPrinters = [
     model: "HL L2460DW",
     image: l2460,
     pricePerMonth: "3,000.00 / Month",
+    isRefurbished: false,
     description: "Compact Mono Laser Printer with 5000-page in-box toner.",
     type: "Brother Laserjet",
     descriptions: () => {
@@ -139,6 +141,7 @@ export const brotherLaserPrinters = [
     model: "DCP L2640DW",
     image: l2640,
     pricePerMonth: "3,500.00 / Month",
+    isRefurbished: false,
     description: "Compact Mono Laser Multi-Function Printer.",
     type: "Brother Laserjet",
     descriptions: () => {
@@ -227,6 +230,7 @@ export const brotherLaserPrinters = [
     model: "HL L5100DN",
     image: l5100,
     pricePerMonth: "4,500.00 / Month",
+    isRefurbished: false,
     description:
       "High Speed Monochrome Laser Printer with Automatic 2-sided Printing and Ethernet network connectivity.",
     type: "Brother Laserjet",
@@ -314,6 +318,7 @@ export const brotherLaserPrinters = [
     model: "HL L8360CDW",
     image: l8360,
     pricePerMonth: "8,000.00 / Month",
+    isRefurbished: false,
     description: "Brother HL-L8360CDW Color Laser + Duplex and Wireless.",
     type: "Brother Laserjet",
     descriptions: () => {
@@ -406,6 +411,7 @@ export const brotherLaserPrinters = [
     model: "MFC L8900CDW",
     image: l8900,
     pricePerMonth: "14,000.00 / Month",
+    isRefurbished: false,
     description:
       "Color Laser Multi-Function Center with Automatic 2-sided Features, Wireless Connectivity and NFC Card Reader.",
     type: "Brother Laserjet",
@@ -501,6 +507,7 @@ export const brotherLaserPrinters = [
     model: "HL L3280CDW",
     image: l3280,
     pricePerMonth: "5,000.00 / Month",
+    isRefurbished: false,
     description: "Compact Colour Laser LED Printer.",
     type: "Brother Laserjet",
     descriptions: () => {
@@ -569,6 +576,7 @@ export const brotherLaserPrinters = [
     model: "MFC L8340CDW",
     image: l8340,
     pricePerMonth: "8,000.00 / Month",
+    isRefurbished: false,
     description:
       'Vivid and precise color printing, come with 3.5" touch screen LCD',
     type: "Brother Laserjet",

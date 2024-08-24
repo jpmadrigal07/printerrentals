@@ -33,6 +33,7 @@ const Printers = () => {
               id={printer.id}
               image={printer.image}
               model={printer.model}
+              isRefurbished={printer.isRefurbished}
               pricePerMonth={printer.pricePerMonth}
               key={printer.model}
             />
@@ -53,6 +54,7 @@ const Printers = () => {
               id={printer.id}
               image={printer.image}
               model={printer.model}
+              isRefurbished={printer.isRefurbished}
               pricePerMonth={printer.pricePerMonth}
               key={printer.model}
             />
@@ -73,6 +75,7 @@ const Printers = () => {
               id={printer.id}
               image={printer.image}
               model={printer.model}
+              isRefurbished={printer.isRefurbished}
               pricePerMonth={printer.pricePerMonth}
               key={printer.model}
             />
