@@ -16,7 +16,7 @@ const pages = [
   { item: "Contact", link: "/contact" },
 ];
 const socMed = [
-  { item: "Facebook", link: "https://www.facebook.com/printerrentalsph" },
+  { item: "Facebook", link: "https://www.facebook.com/printer.rentals.ph.2024" },
   { item: "Twitter", link: "https://twitter.com" },
   { item: "Instagram", link: "https://instagram.com" },
 ];

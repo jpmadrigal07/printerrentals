@@ -4,7 +4,7 @@ import TitleDescriptionLink from './TitleDescriptionLink'
 const itemLinks = [
     {
       item: "Facebook",
-      link: "https://www.facebook.com/printerrentalsph/",
+      link: "https://www.facebook.com/printer.rentals.ph.2024",
     },
     {
       item: "Twitter",
