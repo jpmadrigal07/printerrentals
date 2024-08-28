@@ -156,7 +156,7 @@ export const brotherInkjetPrinters = [
     id: "mfc-j3530dw",
     model: "MFC J3530DW",
     image: j3530,
-    pricePerMonth: "6,000.00 / Month",
+    pricePerMonth: "4,500.00 / Month",
     isRefurbished: true,
     description:
       "The MFC-J3530DW Business Smart Inkjet All-in-One prints, copies, scans and faxes in full A3.",
@@ -232,7 +232,7 @@ export const brotherInkjetPrinters = [
     id: "mfc-j3930dw",
     model: "MFC J3930DW",
     image: j3930,
-    pricePerMonth: "7,000.00 / Month",
+    pricePerMonth: "5,500.00 / Month",
     isRefurbished: true,
     description:
       "The MFC-J3930DW Business Smart Inkjet All-in-One prints, copies, scans and faxes in full A3.",

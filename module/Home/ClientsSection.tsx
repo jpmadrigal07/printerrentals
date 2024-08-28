@@ -88,6 +88,14 @@ const ClientsSection = () => {
       </div>
       <div className="flex flex-wrap justify-center items-center gap-6 md:gap-20 mt-16">
         <FadeInImage
+          img="/gtvl.jpg"
+          className="w-48 md:w-auto"
+          alt="banko logo"
+          width={200}
+          height={200}
+          variant="fade-up"
+        />
+        <FadeInImage
           img="/advance-engineering.png"
           className="w-48 md:w-auto"
           alt="banko logo"
