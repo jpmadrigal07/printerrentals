@@ -35,8 +35,11 @@ const MoreInformation = () => {
       <Typography variant="h2" fontWeight="bold" className="text-gray-800">
         Email:
       </Typography>
-      <Typography variant="h2" className=" mb-6 max-w-96">
+      <Typography variant="h2" className="max-w-96">
         nath.printerrentalsph@gmail.com
+      </Typography>
+      <Typography variant="h2" className="mb-6 max-w-96">
+        reynold.printerrentalsph@gmail.com
       </Typography>
       <Typography variant="h2" fontWeight="bold" className="text-gray-800">
         Social Media:
