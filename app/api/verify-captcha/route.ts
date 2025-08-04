@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 
     const result = await verify.json();
     if(result.success) {
-      const text = `Name: ${name}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nMessage: ${message}\nComment: ${comment}\nWebsite: ${website}`;
+      const text = `Name: ${name}\n\nEmail: ${email}\n\nPhone Number: ${phoneNumber}\n\nMessage: ${message}\n\nComment: ${comment}\n\nWebsite: ${website}`;
       const res = await fetch('https://api.brevo.com/v3/smtp/email', {
         method: 'POST',
         headers: {
