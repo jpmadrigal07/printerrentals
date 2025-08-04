@@ -1,4 +1,3 @@
-import { sendEmail } from '@/common/helpers/sendEmail';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
@@ -32,15 +31,23 @@ export async function POST(req: NextRequest) {
 
     const result = await verify.json();
     if(result.success) {
-      sendEmail({
-        email,
-        subject,
-        name,
-        phoneNumber,
-        message,
-        comment,
-        website
-      })
+      const text = `Name: ${name}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nMessage: ${message}\nComment: ${comment}\nWebsite: ${website}`;
+      const res = await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: {
+          'api-key': process.env.BREVO_API_KEY!,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sender: { name: 'Zkript Solution OPC', email: 'contact@printerrentalsph.com' },
+          to: [{ email: process.env.EMAIL_RECEIVER }],
+          subject,
+          textContent: text,
+          htmlContent: text,
+        }),
+      });
+      const data = await res.json();
+      console.log('Email sent successfully:', data);
     }
     return NextResponse.json({ success: result.success });
   } catch (error: unknown) {
