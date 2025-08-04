@@ -157,7 +157,7 @@ Website: ${website}`;
         body: JSON.stringify({
           sender: { name: 'Zkript Solution OPC', email: 'contact@printerrentalsph.com' },
           to: [{ email: process.env.EMAIL_RECEIVER }],
-          subject,
+          subject: `Printer Rentals PH Inquiry - ${subject}`,
           textContent,
           htmlContent,
         }),
