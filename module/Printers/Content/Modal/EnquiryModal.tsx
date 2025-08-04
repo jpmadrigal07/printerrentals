@@ -86,24 +86,6 @@ const EnquiryModal = ({ isOpen, setClose }: T_Props) => {
             <div>
               <div className="flex items-center justify-between">
                 <Typography className="text-[22px]" fontWeight="bold">
-                  {process.env.SMTP_FROM || "Printer Rentals PH 123"}
-                </Typography>
-                <Typography className="text-[22px]" fontWeight="bold">
-                  {process.env.SMTP_PORT || "Printer Rentals PH 123"}
-                </Typography>
-                <Typography className="text-[22px]" fontWeight="bold">
-                  {process.env.SMTP_SECURE || "Printer Rentals PH 123"}
-                </Typography>
-                <Typography className="text-[22px]" fontWeight="bold">
-                  {process.env.SMTP_USER || "Printer Rentals PH 123"}
-                </Typography>
-                <Typography className="text-[22px]" fontWeight="bold">
-                  {process.env.SMTP_PASS || "Printer Rentals PH 123"}
-                </Typography>
-                <Typography className="text-[22px]" fontWeight="bold">
-                  {process.env.SMTP_HOST || "Printer Rentals PH 123"}
-                </Typography>
-                <Typography className="text-[22px]" fontWeight="bold">
                   Product Enquiry
                 </Typography>
                 <button onClick={setClose}>
